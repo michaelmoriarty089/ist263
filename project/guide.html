@@ -140,7 +140,7 @@
 
             // when the time changes, this will be called.
             function onProgress(currentTime) {
-                if(currentTime === 20) {
+                if(currentTime > 20 && currentTime < 22) {
                     document.getElementById('camdendesc1').style.display = 'none';
                 }
             }
