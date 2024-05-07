@@ -14,50 +14,135 @@
             .jamlist {display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 20px;}
             .jamplayer {display: flex; flex-wrap: wrap; background-color: #2a3f4e; border-radius: 1em; margin-top: 20px;
             padding: 20px; justify-content: space-between;}
-            .howto {width: 60%; background-color: #2a3f4e; border-radius: 1em; padding: 15px;}
-            .howto h2 {text-align: center; font-size: 40px;}
+            #howto {width: 60%; background-color: #2a3f4e; border-radius: 1em; padding: 15px;}
+            #howto h2 {text-align: center; font-size: 40px;}
             .songlist {background-color: #2a3f4e; border-radius: 1em; margin-right: 10%; width: 20%;}
             .songlist h2 {text-align: center; font-size: 40px;}
-            .slist {font-family: "Josefin Sans", sans-serif;}
-            .jamwindow {width: 40%;}
+            #jamwindow {width: 40%;}
             .jamdesc {width: 50%;}
             .jamdesc h2 {text-align: center; font-size: 40px;}
-            #camden, #tweezer, #kdf {max-width: 100%;}
+            #camdendesc1, #startdesc, #startwindow {display: none;}
+
+
+            .slist {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                margin: 10px;
+            }
+
+            .songbutt {
+                background-color: #be2a28;
+                border: none;
+                border-radius: 1em;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-family: "Chicle";
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+
+            #camdendesc2 {
+                display: none;
+                animation-name: fade-in-out;
+                animation-duration: 10s;
+                animation-timing-function: linear;
+                animation-delay: 0s;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: none;
+                animation-play-state: running;
+            }
+
+            @keyframes fade-in-out {
+                0% {
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 1;
+                }
+                90% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity:0;
+                }
+            }
 
         </style>
         <script>
-            var tag = document.createElement('script');
-            tag.id = 'iframe-demo';
-            tag.src = 'https://www.youtube.com/iframe_api';
-            var firstScriptTag = document.getElementsByTagName('script')[0];
+
+            
+
+            function DescOff () {
+                document.getElementById('startwindow').style.display = "none";
+                document.getElementById('startdesc').style.display = "none";
+                document.getElementById('camdendesc2').style.display = "none";
+
+            }
+
+            function DescOn() {
+                document.getElementById('camdendesc2').style.display = 'block';
+                document.getElementById('camdenplayer').style.display = 'block';
+                setTimeout(DescOff, 10000);
+
+            }
+
+
+            // Load the IFrame Player API code asynchronously.
+            var tag = document.createElement("script");
+
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName("script")[0];
             firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-            var player;
+            // Instantiate the Player.
             function onYouTubeIframeAPIReady() {
-                player = new YT.Player('camden', {
-                    events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                    }
+                var player = new YT.Player("camdenplayer", {
+                    height: "405",
+                    width: "720",
+                    videoId: "1xZMHQjRTSM"
                 });
-            
-            
+
+                // This is the source "window" that will emit the events.
                 var iframeWindow = player.getIframe().contentWindow;
-                window.addEventListener(
-                    "message",
-                    function (event) {
-                        if (event.source === iframeWindow) {
-                            var data = JSON.parse(event.data);
-                            if (data.event === "infoDelivery" && data.info && data.info.currentTime) {
-                                var time = Math.floor(data.info.currentTime);
-                                if (time === 30) {
-                                    document.getElementById('camdendesc2').style.animationPlayState = "running"
-                                }
-                            }
+
+                // So we can compare against new updates.
+                var lastTimeUpdate = 0;
+
+                // Listen to events triggered by postMessage,
+                // this is how different windows in a browser
+                // (such as a popup or iFrame) can communicate.
+                // See: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
+                window.addEventListener("message", function (event) {
+                    // Check that the event was sent from the YouTube IFrame.
+                    if (event.source === iframeWindow) {
+                    var data = JSON.parse(event.data);
+
+                    // The "infoDelivery" event is used by YT to transmit any
+                    // kind of information change in the player,
+                    // such as the current time or a playback quality change.
+                    if (data.event === "infoDelivery" && data.info && data.info.currentTime) {
+                        // currentTime is emitted very frequently (milliseconds),
+                        // but we only care about whole second changes.
+                        var time = Math.floor(data.info.currentTime);
+
+                        if (time !== lastTimeUpdate) {
+                        lastTimeUpdate = time;
+
+                        // It's now up to you to format the time.
+                        document.getElementById("time").innerHTML = time;
                         }
                     }
-                )
+                    }
+                });
             }
+
+
 
         </script>
     </head>
@@ -87,31 +172,40 @@
         <main id="main">
 
             <section class="jamtitle">
-                <img src="images/jam guide title.png" alt="Jam guide title card">
+                <img id="jamcard" src="images/jam guide title.png" alt="Jam guide title card">
             </section>
 
             <section class="jamlist">
-                <div class="howto">
+                <div id="howto">
                     <h2>How To Use This Guide</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat laboriosam, necessitatibus ad vero minima molestiae nulla exercitationem eius nobis qui, perspiciatis obcaecati unde explicabo neque atque omnis, voluptatibus veniam dolorem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex neque amet, nihil incidunt doloremque consequuntur asperiores ratione omnis nulla soluta voluptates sed quam voluptas reprehenderit doloribus maxime quae adipisci corporis?</p>
+                    <p>Time: <span id="time">0</span> seconds</p>
                 </div>
                 <div class="songlist">
                     <h2>Songlist</h2>
-                    <ul class="slist">
-                        <li onclick="DescOn();">Chaldust Torture 7/10/1999</li>
-                        <li>Tweezer 2/28/2003</li>
-                        <li>Kill Devil Falls 7/23/2023</li>
-                    </ul>
+                    <div class="slist">
+                        <button class="songbutt" onclick="DescOff(); DescOn(); TimeOff();">Chaldust Torture 7/10/1999</button>
+                        <button class="songbutt">Tweezer 2/28/2003</button>
+                        <button class="songbutt">Kill Devil Falls 7/23/2023</button>
+                    </div>
                 </div>
             </section>
 
             <section class="jamplayer">
-                <div class="jamwindow">
-                    <iframe id="camden" width="720" height="405" src="https://www.youtube.com/embed/1xZMHQjRTSM?si=iJeGRsB_rK3wnblN&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <div id="jamwindow">
+                    <div id="startwindow">
+                        <img id="hotdog" src="images/Phishdog.png" alt="Phish riding a giant hot dog">
+                    </div>
+                    <div id="camdenplayer">
+                    </div>
                 </div>
                 <div class="jamdesc">
                     <h2>Description</h2>
-                    
+                    <div id="startdesc">
+                        <h2>Click on a show above to get started!</h2>
+                    </div>
+                    <div id="camdendesc1">
+                        <p>When asked what their favorite jam is, most of the band members cite this performance.</p>
+                    </div>
                     <div id="camdendesc2">
                         <p>Here is where the jam begins</p>
                     </div>

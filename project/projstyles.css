@@ -73,6 +73,10 @@ nav {
 .fishpic:hover {animation-play-state: running;}
 .ck5pic:hover {animation-play-state: running;}
 
+
+.titlecard, .subtitlecard, .webtitlecard, .barber, .treypic, .mikepic, .pagepic, .fishpic, .ck5pic, .histvid, .ocelot {max-width: 100%;}
+#camden, #tweezer, #kdf, #hotdog, #jamcard, #histvid1, #histvid2, #histvid3, #histvid4, #histvid5, #histvid6, #histvid7 {max-width: 100%;}
+
 @keyframes shake-center {
 	0% {
     transform:rotate(0deg);
@@ -111,33 +115,7 @@ nav {
   }
 }
 
-#camdendesc2 {
-  animation-name: fade-in-out;
-  animation-duration: 10s;
-  animation-timing-function: linear;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: none;
-  animation-play-state: paused;
-}
 
-
-
-@keyframes fade-in-out {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity:0;
-  }
-}
 
 
 footer {
