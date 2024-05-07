@@ -162,8 +162,8 @@
 
             // when the time changes, this will be called.
             function onProgress(currentTime) {
-                if(currentTime > 1) {
-                    document.getElementById('camdesc1').style.display = 'none';
+                if(currentTime > 0) {
+                    document.getElementById('camdendesc1').style.animationPlayState = 'running';
                 }
                 if(currentTime > 179 && currentTime < 182) {
                     document.getElementById('camdendesc2').style.display = 'block';
