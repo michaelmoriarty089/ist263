@@ -40,24 +40,24 @@
                     'onStateChange': onPlayerStateChange
                     }
                 });
-            }
             
-            var iframeWindow = player.getIframe().contentWindow;
-            window.addEventListener(
-                "message",
-                function (event) {
-                    if (event.source === iframeWindow) {
-                        var data = JSON.parse(event.data);
-                        if (data.event === "infoDelivery" && data.info && data.info.currentTime) {
-                            var time = Math.floor(data.info.currentTime);
-                            if (time === 30) {
-                                document.getElementById('camdesc2').style.animationPlayState = "running"
+            
+                var iframeWindow = player.getIframe().contentWindow;
+                window.addEventListener(
+                    "message",
+                    function (event) {
+                        if (event.source === iframeWindow) {
+                            var data = JSON.parse(event.data);
+                            if (data.event === "infoDelivery" && data.info && data.info.currentTime) {
+                                var time = Math.floor(data.info.currentTime);
+                                if (time === 30) {
+                                    document.getElementById('camdesc2').style.animationPlayState = "running"
+                                }
                             }
                         }
                     }
-                }
-            )
-
+                )
+            }
 
         </script>
     </head>
