@@ -114,7 +114,7 @@
             var timeupdater = null;
 
             function CamVidReady() {
-                player = new YT.Player('camdenplayer', {
+                cplayer = new YT.Player('camdenplayer', {
                     width: '720',
                     height: '405',
                     videoId: "1xZMHQjRTSM",
@@ -128,8 +128,8 @@
             function onPlayerReady() {
                 function updateTime() {
                     var oldTime = videotime;
-                    if(player && player.getCurrentTime) {
-                        videotime = player.getCurrentTime();
+                    if(cplayer && cplayer.getCurrentTime) {
+                        videotime = cplayer.getCurrentTime();
                     }
                     if(videotime !== oldTime) {
                         onProgress(videotime);
@@ -140,7 +140,7 @@
 
             // when the time changes, this will be called.
             function onProgress(currentTime) {
-                if(currentTime > 20) {
+                if(currentTime = 20) {
                     document.getElementById('camdendesc1').style.display = 'none';
                 }
             }
