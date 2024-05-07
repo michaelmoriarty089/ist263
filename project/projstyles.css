@@ -1,0 +1,183 @@
+
+body {
+  background-image: url(images/donuts.png);
+  font-family: "Chicle", serif;
+  color: white;
+}
+
+h1, h2, h3 {
+  font-family: "Chicle", serif;
+  color: #ffffff; 
+}
+
+p {
+  font-family: "Josefin Sans", sans-serif;
+  color: #ffffff;
+}
+
+nav {
+  background-color: #2a3f4e;
+  border-radius: 1em;
+}
+
+.navflex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+.webtitle {
+  margin-top: 30px;
+  margin-left: 100px;
+  
+}
+
+.navbutts {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.navbutton {
+  background-color: #be2a28;
+  border: none;
+  border-radius: 1em;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Chicle";
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.ocelot {
+  margin-top: 20px;
+  animation-name: shake-center;
+  animation-duration: 1.8s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: paused;
+}
+
+.ocelot:hover {animation-play-state: running;}
+
+@keyframes shake-center {
+			0% {
+    transform:rotate(0deg);
+    transform-origin:50% 50%;
+  }
+  10% {
+    transform:rotate(8deg);
+  }
+  20% {
+    transform:rotate(-10deg);
+  }
+  30% {
+    transform:rotate(10deg);
+  }
+  40% {
+    transform:rotate(-10deg);
+  }
+  50% {
+    transform:rotate(10deg);
+  }
+  60% {
+    transform:rotate(-10deg);
+  }
+  70% {
+    transform:rotate(10deg);
+  }
+  80% {
+    transform:rotate(-8deg);
+  }
+  90% {
+    transform:rotate(8deg);
+  }
+  100% {
+    transform:rotate(0deg);
+    transform-origin:50% 50%;
+  }
+}
+
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #2a3f4e;
+  margin-top: 20px;
+  padding: 2px;
+  border-radius: 1em;
+}
+
+footer p {
+  margin-left: 10px;
+  width: 42%;
+}
+
+.footbutts {
+  float: right;
+}
+
+.footbutton {
+  background-color: #be2a28;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  display: inline-block;
+  font-family: "Chicle";
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.skip {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .skip:focus {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+@media only screen and (max-width: 200px) {
+    nav a {display: block; max-width: 100%; margin: 10px;} 
+    
+}
+
+
+.josefin-sans-body {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.chicle-regular {
+  font-family: "Chicle", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ultra-regular {
+  font-family: "Ultra", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.clear {clear: both;}
