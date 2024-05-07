@@ -78,11 +78,17 @@
 
             
 
-            function DescOff () {
+            function DescOff() {
                 document.getElementById('startwindow').style.display = "none";
                 document.getElementById('startdesc').style.display = "none";
                 document.getElementById('camdendesc1').style.display = "none";
 
+            }
+
+            function VidOff() {
+                document.getElementById('startwindow').style.display = "none"
+                document.getElementById('camdenplayer').style.display = "none"
+                document.getElementById('tweezplayer').style.display = "none"
             }
 
             function CamdenOn() {
@@ -100,7 +106,6 @@
 
             // Load the IFrame Player API code asynchronously.
             var tag = document.createElement("script");
-
             tag.src = "https://www.youtube.com/iframe_api";
             var firstScriptTag = document.getElementsByTagName("script")[0];
             firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -188,49 +193,6 @@
                 });
             }
 
-            function onYouTubeIframeAPIReady() {
-                var player = new YT.Player("tweezplayer", {
-                    height: "405",
-                    width: "720",
-                    videoId: "25GWjze0WlU"
-                });
-
-                // This is the source "window" that will emit the events.
-                var iframeWindow = player.getIframe().contentWindow;
-
-                // So we can compare against new updates.
-                var lastTimeUpdate = 0;
-
-                // Listen to events triggered by postMessage,
-                // this is how different windows in a browser
-                // (such as a popup or iFrame) can communicate.
-                // See: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
-                window.addEventListener("message", function (event) {
-                    // Check that the event was sent from the YouTube IFrame.
-                    if (event.source === iframeWindow) {
-                    var data = JSON.parse(event.data);
-
-                    // The "infoDelivery" event is used by YT to transmit any
-                    // kind of information change in the player,
-                    // such as the current time or a playback quality change.
-                    if (data.event === "infoDelivery" && data.info && data.info.currentTime) {
-                        // currentTime is emitted very frequently (milliseconds),
-                        // but we only care about whole second changes.
-                        var time = Math.floor(data.info.currentTime);
-
-                        if (time !== lastTimeUpdate) {
-                        lastTimeUpdate = time;
-
-                        // It's now up to you to format the time.
-                        document.getElementById("time").innerHTML = time;
-                        }
-                    }
-                    }
-                });
-            }
-
-
-
         </script>
     </head>
     <body>
@@ -270,8 +232,8 @@
                 <div class="songlist">
                     <h2>Songlist</h2>
                     <div class="slist">
-                        <button class="songbutt" onclick="DescOff(); CamdenOn(); CamVidReady();">Chaldust Torture 7/10/1999</button>
-                        <button class="songbutt" onclick="DescOff(); TweezOn(); TweezVidReady()">Tweezer 2/28/2003</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); CamdenOn(); CamVidReady();">Chaldust Torture 7/10/1999</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); TweezOn(); TweezVidReady()">Tweezer 2/28/2003</button>
                         <button class="songbutt">Kill Devil Falls 7/23/2023</button>
                     </div>
                 </div>
