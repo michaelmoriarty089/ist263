@@ -119,6 +119,11 @@
 
             }
 
+            function CamdenOn2() {
+                document.getElementById('camdendesc2').style.display = 'block'
+                setTimeout(DescOff, 10000)
+            }
+
             function TweezOn() {
                 document.getElementById('tweezdesc1').style.display = 'block';
                 document.getElementById('tweezplayer').style.display = 'block';
@@ -166,7 +171,7 @@
                     document.getElementById('camdendesc1').style.animationPlayState = 'running';
                 }
                 if(currentTime > 179 && currentTime < 182) {
-                    document.getElementById('camdendesc2').style.display = 'block';
+                    CamdenOn2;
                 }
             }
 
