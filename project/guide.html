@@ -87,7 +87,6 @@
 
             function DescOn() {
                 document.getElementById('camdendesc2').style.display = 'block';
-                document.getElementById('camdenplayer').style.display = 'block';
                 setTimeout(DescOff, 10000);
 
             }
@@ -131,11 +130,8 @@
                         // but we only care about whole second changes.
                         var time = Math.floor(data.info.currentTime);
 
-                        if (time !== lastTimeUpdate) {
-                        lastTimeUpdate = time;
-
-                        // It's now up to you to format the time.
-                        document.getElementById("time").innerHTML = time;
+                        if (time === 5000) {
+                            DescOn();
                         }
                     }
                     }
