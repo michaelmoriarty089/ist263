@@ -11,8 +11,17 @@
         <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Josefin+Sans:ital@0;1&family=Ultra&display=swap" rel="stylesheet">
         <style>
             .jamtitle {background-color: #2a3f4e; border-radius: 1em; width: 60%; margin: 0 auto; text-align: center; margin-top: 20px; padding: 15px;}
-            .jamlist {display: flex; flex-wrap: wrap; background-color: #2a3f4e; border-radius: 1em;}
-            .jamplayer {display: flex; flex-wrap: wrap; background-color: #2a3f4e; border-radius: 1em;}
+            .jamlist {display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 20px;}
+            .jamplayer {display: flex; flex-wrap: wrap; background-color: #2a3f4e; border-radius: 1em; margin-top: 20px;
+            padding: 20px; justify-content: space-around;}
+            .howto {width: 60%; background-color: #2a3f4e; border-radius: 1em; padding: 15px;}
+            .howto h2 {text-align: center; font-size: 40px;}
+            .songlist {background-color: #2a3f4e; border-radius: 1em; margin-right: 10%; width: 20%;}
+            .songlist h2 {text-align: center; font-size: 40px;}
+            .slist {font-family: "Josefin Sans", sans-serif;}
+            .player {width: 40%;}
+            .jamdesc {width: 50%;}
+            .jamdesc h2 {text-align: center; font-size: 40px;}
 
         </style>
         <script src="guidescript.js"></script>
@@ -52,8 +61,8 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat laboriosam, necessitatibus ad vero minima molestiae nulla exercitationem eius nobis qui, perspiciatis obcaecati unde explicabo neque atque omnis, voluptatibus veniam dolorem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex neque amet, nihil incidunt doloremque consequuntur asperiores ratione omnis nulla soluta voluptates sed quam voluptas reprehenderit doloribus maxime quae adipisci corporis?</p>
                 </div>
                 <div class="songlist">
-                    <h2>An Unordered HTML List</h2>
-                    <ul>
+                    <h2>Songlist</h2>
+                    <ul class="slist">
                         <li>Chaldust Torture 7/10/1999</li>
                         <li>Tweezer 2/28/2003</li>
                         <li>Kill Devil Falls 7/23/2023</li>
@@ -62,8 +71,8 @@
             </section>
 
             <section class="jamplayer">
-                <div>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/1xZMHQjRTSM?si=iJeGRsB_rK3wnblN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="player">
+                    <iframe width="720" height="405" src="https://www.youtube.com/embed/1xZMHQjRTSM?si=iJeGRsB_rK3wnblN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="jamdesc">
                     <h2>Description</h2>
