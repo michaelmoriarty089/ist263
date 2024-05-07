@@ -87,6 +87,7 @@
 
             function DescOn() {
                 document.getElementById('camdendesc2').style.display = 'block';
+                document.getElementById('camdenplayer').style.display = 'block';
                 setTimeout(DescOff, 10000);
 
             }
@@ -101,10 +102,11 @@
 
             // Instantiate the Player.
             function onYouTubeIframeAPIReady() {
-                var player = new YT.Player("camdenplayer", {
-                    height: "405",
-                    width: "720",
-                    videoId: "1xZMHQjRTSM"
+                var player = new YT.Player("camden", {
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                        }
                 });
 
                 // This is the source "window" that will emit the events.
@@ -130,8 +132,11 @@
                         // but we only care about whole second changes.
                         var time = Math.floor(data.info.currentTime);
 
-                        if (time === 5000) {
-                            DescOn();
+                        if (time !== lastTimeUpdate) {
+                        lastTimeUpdate = time;
+
+                        // It's now up to you to format the time.
+                        document.getElementById("time").innerHTML = time;
                         }
                     }
                     }
@@ -192,6 +197,7 @@
                         <img id="hotdog" src="images/Phishdog.png" alt="Phish riding a giant hot dog">
                     </div>
                     <div id="camdenplayer">
+                        <iframe id="camden" width="720" height="405" src="https://www.youtube.com/embed/1xZMHQjRTSM?si=iJeGRsB_rK3wnblN&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
                 </div>
                 <div class="jamdesc">
