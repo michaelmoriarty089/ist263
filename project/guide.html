@@ -13,19 +13,52 @@
             .jamtitle {background-color: #2a3f4e; border-radius: 1em; width: 60%; margin: 0 auto; text-align: center; margin-top: 20px; padding: 15px;}
             .jamlist {display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 20px;}
             .jamplayer {display: flex; flex-wrap: wrap; background-color: #2a3f4e; border-radius: 1em; margin-top: 20px;
-            padding: 20px; justify-content: space-around;}
+            padding: 20px; justify-content: space-between;}
             .howto {width: 60%; background-color: #2a3f4e; border-radius: 1em; padding: 15px;}
             .howto h2 {text-align: center; font-size: 40px;}
             .songlist {background-color: #2a3f4e; border-radius: 1em; margin-right: 10%; width: 20%;}
             .songlist h2 {text-align: center; font-size: 40px;}
             .slist {font-family: "Josefin Sans", sans-serif;}
-            .player {width: 40%;}
+            .jamwindow {width: 40%;}
             .jamdesc {width: 50%;}
             .jamdesc h2 {text-align: center; font-size: 40px;}
+            .cam
             #camden, #tweezer, #kdf {max-width: 100%;}
 
         </style>
-        <script src="guidescript.js"></script>
+        <script>
+            var tag = document.createElement('script');
+            tag.id = 'iframe-demo';
+            tag.src = 'https://www.youtube.com/iframe_api';
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            var player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('camden', {
+                    events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+            
+            var iframeWindow = player.getIframe().contentWindow;
+            window.addEventListener(
+                "message",
+                function (event) {
+                    if (event.source === iframeWindow) {
+                        var data = JSON.parse(event.data);
+                        if (data.event === "infoDelivery" && data.info && data.info.currentTime) {
+                            var time = Math.floor(data.info.currentTime);
+                            if (time === 285) 
+                        }
+                    }
+                }
+            )
+
+
+        </script>
     </head>
     <body>
         <a href="#main" class="skip">Skip to main content</a>
@@ -72,8 +105,8 @@
             </section>
 
             <section class="jamplayer">
-                <div class="player">
-                    <div id="camdenvid"></div>
+                <div class="jamwindow">
+                    <iframe id="camden" width="720" height="405" src="https://www.youtube.com/embed/1xZMHQjRTSM?si=iJeGRsB_rK3wnblN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
                 <div class="jamdesc">
                     <h2>Description</h2>

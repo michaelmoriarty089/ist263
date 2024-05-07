@@ -1,0 +1,30 @@
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #cff09e;
+    color: #38634c
+    ;
+}
+
+h1, h2, h3 {color: #0b486b;}
+
+p, ul {color: #38634c;}
+
+a:link {color: #3b8686;}
+a:visited {color: #42037c}
+
+nav {
+    background-color: #0b486b;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+nav a {color: #e0ffff;}
+nav a:visited {color: #83a3a3;}
+nav a:hover {background-color: #cff09e; width: fit-content;}
+
+
+
+@media only screen and (max-width: 992px) {
+    nav a {display: block; max-width: 100%; margin: 10px;} 
+    nav span {display: none;}
+}
+

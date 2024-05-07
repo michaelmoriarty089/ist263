@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">     
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            .row1, .row2 {background-color: azure; margin: 20px; border-radius: 2em; padding: 20px;}
+            .col11, .col12, .col21, .col22 {margin: 30px;}
+            .col11, .col21 {margin-left: 20px;}
+
+            .row1 {display: flex;}
+            .row2 {display: flex; flex-wrap: wrap;}
+
+            .col22 {margin-left: auto;}
+
+            .map {text-align: right;}
+
+            .linklogo {margin-left: 15px;}
+        </style>
+    </head>
+    <body>
+        <nav>
+            <p>
+                <a href="index.html">Home</a><span> | </span><a href="skills.html">Skills</a><span> | </span><a href="contact.html">Contact</a>
+            </p>
+        </nav>
+        <h1>Contact</h1>
+        <div class="row1">
+            <div class="col11">
+                <h2>Address</h2>
+                <p>Michael Moriarty<br>
+                900 S Crouse Ave<br>
+                Syracuse, NY 13244</p>
+            </div>
+            <div class="col12">
+                <a href="mailto:mimoriar@syr.edu">Email</a><br>
+                <a href="https://www.linkedin.com/in/michaelpmoriarty/">My LinkedIn Profile</a>
+                <a href="https://www.linkedin.com/in/michaelpmoriarty/"><img class="linklogo" src="../images/logo_small.png" alt="LinkedIn Logo that links to LinkedIn profile"></a><br>
+            </div>
+        </div>    
+        <div class="row2">
+            <div class="col21">
+                <h3>Contact Me!</h3>
+                <form action="https://formspree.io/f/xqkrpgge" method="post">
+                    <label for="yname">Your Name:</label>
+                    <input type="text" id="yname" name="contactname"><br>
+
+                    <p>Reason for contact:</p>    
+                        <input type="radio" id="personal" name="contacttype" value="personal"> <!--name value links different choices-->
+                        <label for="personal">Personal</label>
+                        <input type="radio" id="professional" name="contacttype" value="professional">
+                        <label for="professional">Professional</label>
+                        <input type="radio" id="other" name="contacttype" value="other">
+                        <label for="other">Other</label><br><br>
+                        <label for="message">Message:</label><br>
+                        <textarea id="message" name="message" rows="8" cols="40"></textarea><br>
+                        <input type="submit" value="Send">
+                </form>
+            </div>     
+            <iframe class="col22" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11664.528745483385!2d-76.1336922!3d43.0386502!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d9f39fba2ccc55%3A0x5e6089065251084d!2sSyracuse%20University!5e0!3m2!1sen!2sus!4v1706676639033!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </body>
+</html>

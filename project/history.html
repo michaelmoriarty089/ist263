@@ -10,6 +10,137 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Josefin+Sans:ital@0;1&family=Ultra&display=swap" rel="stylesheet">
         <style>
+            * {
+            box-sizing: border-box;
+            }
+
+           /* The actual timeline (the vertical ruler) */
+            .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            }
+
+            /* The actual timeline (the vertical ruler) */
+            .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #2a3f4e;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            }
+
+            /* Container around content */
+            .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            }
+
+            /* The circles on the timeline */
+            .container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #2a3f4e;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            }
+
+            /* Place the container to the left */
+            .left {
+            left: 0;
+            }
+
+            /* Place the container to the right */
+            .right {
+            left: 50%;
+            }
+
+            /* Add arrows to the left container (pointing right) */
+            .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+            }
+
+            /* Add arrows to the right container (pointing left) */
+            .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+            }
+
+            /* Fix the circle for containers on the right side */
+            .right::after {
+            left: -16px;
+            }
+
+            /* The actual content */
+            .content {
+            padding: 20px 20px;
+            background-color: #2a3f4e;
+            position: relative;
+            border-radius: 1em;
+            }
+
+            .content h2 {
+                text-align: center;
+                font-size: 48px;
+                margin-top: 5px;
+            }
+
+          
+
+            .timevid {
+                text-align: center;
+            }
+
+            .histitle {
+                background-color: #2a3f4e;
+                text-align: center;
+                width: 80%;
+                border-radius: 1em;
+                margin: 0 auto;
+                margin-top: 20px;
+            }
+
+            .histintro {
+                background-color: #2a3f4e;
+                width: 60%;
+                border-radius: 1em;
+                margin: 0 auto;
+                margin-top: 20px;
+                padding: 20px 20px;
+            }
+
+            .histintro h2 {
+                text-align: center;
+                font-size: 56px;
+                margin-top: 30px;
+            }
 
         </style>
         <script>
@@ -40,8 +171,90 @@
             </div>
         </nav>
         <main id="main">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/1xZMHQjRTSM?si=yEMDMKzkoLGTNEVA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+            
+            <section class="histitle">
+                <img src="images/history title.png" alt="History title card">
+            </section>
+            <section class="histintro">
+                <h2>40 Years Of Unbridled Creativity</h2>
+                <p>Throughout their 40-year career, Phish has gone through many changes of their sound. Most fans divide these “eras” into three groups: 1.0, which goes from the start of the band until their first hiatus in 2001; 2.0, which goes from their return in 2002 until their official break-up in 2004; and 3.0, which goes from their reunion in 2009 until the present day. However, these broad eras don’t capture the full range of the change in their sound over the years. Thus, I have broken those eras up even more to explain how the band sounded throughout different stages in their career:</p>
+            </section>
+            <section>            
+                <div class="timeline">
+                    <div class="container left">
+                        <div class="content">
+                            <h2>1983-1988</h2>
+                            <p>These are the early years of Phish; the years they spent cutting their teeth playing small bars, frat houses, friend’s farms, and really anywhere else that would book them. You can hear them here finding their sound and enjoying to the fullest of being young, early-20s kids just playing music.</p>
+                            <div class="timevid">
+                                <iframe width="420" height="263" src="https://www.youtube.com/embed/Sh9Pws7mOjE?si=nP-6M8qlHiYoo1TS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container right">
+                    <div class="content">
+                        <h2>1989-1992</h2>
+                        <p>Here is where the hard grind starts to pay off for Phish. The band is starting to get national attention. They’re not just playing the northeast club circuit anymore; they’re heading out to bigger and bigger clubs and theaters all across the country. Their playing is more dialed in, more intense, and more exploratory.</p>
+                        <div class="timevid">
+                            <iframe width="420" height="263" src="https://www.youtube.com/embed/c3zpnp3g7dI?si=wKnGJfcaIpFSI6zK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container left">
+                    <div class="content">
+                        <h2>1993-1996</h2>
+                        <p>With the addition of Page’s baby grand piano in 1993, Phish has now become a powerhouse, moving from clubs and small theaters to arenas. The fan base starts pick up steam here as well, and by 1995, after the death of Jerry Garcia and consequentially the end of the Grateful Dead, Phish becomes the de facto leaders of the jam band world. In 1996, the band puts on its first solo festival, heralding a new age in the American music festival scene. The band’s playing here has matured, deepened, and expanded into arena rock bliss.</p>
+                        <div class="timevid">
+                            <iframe width="420" height="263" src="https://www.youtube.com/embed/mwgLW-0OkJ4?si=Jzxj3tQLO0umQXev" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container right">
+                    <div class="content">
+                        <h2>1997-1998</h2>
+                        <p>The “Cow Funk” era. The band at this point is on top of the world, and Phish Tour has turned into one big party. To match this, Phish adopted an extremely funky sound, taking great inspiration from James Brown and the meters. The crazy note-filled jams are replaced with a more groove-based orientation.</p>
+                        <div class="timevid">
+                            <iframe width="420" height="263" src="https://www.youtube.com/embed/r0kAyCprnR4?si=J0fCObNHP24oE759" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container left">
+                    <div class="content">
+                        <h2>1999-2000</h2>
+                        <p>By 1999, Phish has taken the groove-based approach to a whole new level. Mike and Fish are now center stage, reinforcing the idea that the groove is now taking the lead. The funk takes a step back however, and the Phish experiment now takes on a more ambient approach. The deep grooves are accompanied by sparse soundscapes from Trey and Page, making the listener feel like they are floating through space.</p>
+                        <div class="timevid">
+                            <iframe width="420" height="263" src="https://www.youtube.com/embed/xri7OSXJzfc?si=VuhL1qeQqQiy0i5Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container right">
+                    <div class="content">
+                        <h2>2002-2004</h2>
+                        <p>After a brief hiatus in 2001, Phish returned to the stage in 2002 a little disheveled and a little burnt out from their success. The partying and the drugs had taken their toll, and this era is marked by off-kilter shows and a general weird vibe all around, leading to the eventual break-up of the band. That being said, this era isn’t without its great moments, and the good playing during this time is powerful, emotion driven mega-rock jams.</p>
+                        <div class="timevid">
+                            <iframe width="420" height="263" src="https://www.youtube.com/embed/EVs0rhPvCvY?si=jNexXd342JlaS_Kj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container left">
+                    <div class="content">
+                        <h2>2009-2013</h2>
+                        <p>The Triumphant Return! The band is back, Trey is sober, and the world is starting to look bright again. The band takes these few years to shake the cobwebs off and really try to find what their new sound is.</p>
+                        <div class="timevid">
+                            <iframe width="420" height="263" src="https://www.youtube.com/embed/4POwr8pmlWM?si=VokV5IqBfTPevalc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container right">
+                    <div class="content">
+                        <h2>2014-Present</h2>
+                        <p>The band by now has really honed in on their new sound. Trey has left the crazy shredding behind, opting to explore more sounds with his effects pedals. Page takes a much more central role in many jams, also expanding his sound through a litany of synthesizers.</p>
+                        <div class="timevid">
+                            <iframe width="420" height="263" src="https://www.youtube.com/embed/JkSwqry8Cy0?si=oLccAQ6T5x1GQdH7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer>
             <p>&copy;2024  This site voluntarily complies with the Phish fan web site policy at: <a href="https://www.phish.com/faq/web-guidelines&#8221" target="_blank">https://www.phish.com/faq/web-guidelines&#8221</a></p>

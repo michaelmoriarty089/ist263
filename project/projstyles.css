@@ -1,6 +1,7 @@
 
 body {
   background-image: url(images/donuts.png);
+  background-size: 100%, 100%;
   font-family: "Chicle", serif;
   color: white;
 }
@@ -30,7 +31,6 @@ nav {
 .webtitle {
   margin-top: 30px;
   margin-left: 100px;
-  
 }
 
 .navbutts {
@@ -188,7 +188,12 @@ footer p {
     height: auto;
   }
 
-@media only screen and (max-width: 200px) {}
+@media only screen and (max-width: 600px) {
+  .timeline::after {
+    left: 31px;
+  }
+
+}
 
 
 .josefin-sans-body {
