@@ -21,7 +21,7 @@
             #jamwindow {width: 40%;}
             .jamdesc {width: 50%;}
             .jamdesc h2 {text-align: center; font-size: 40px;}
-            #camdendesc1, #camdenplayer {display: none;}
+            #camdendesc1, #camdenplayer, #tweezplayer, #tweezdesc1 {display: none;}
 
 
             .slist {
@@ -81,14 +81,19 @@
             function DescOff () {
                 document.getElementById('startwindow').style.display = "none";
                 document.getElementById('startdesc').style.display = "none";
-                document.getElementById('camdendesc2').style.display = "none";
+                document.getElementById('camdendesc1').style.display = "none";
 
             }
 
-            function DescOn() {
-                document.getElementById('camdendesc2').style.display = 'block';
+            function CamdenOn() {
+                document.getElementById('camdendesc1').style.display = 'block';
                 document.getElementById('camdenplayer').style.display = 'block';
-                setTimeout(DescOff, 10000);
+
+            }
+
+            function TweezOn() {
+                document.getElementById('tweezdesc1').style.display = 'block';
+                document.getElementById('tweezplayer').style.display = 'block';
 
             }
 
@@ -106,6 +111,88 @@
                     height: "405",
                     width: "720",
                     videoId: "1xZMHQjRTSM"
+                });
+
+                // This is the source "window" that will emit the events.
+                var iframeWindow = player.getIframe().contentWindow;
+
+                // So we can compare against new updates.
+                var lastTimeUpdate = 0;
+
+                // Listen to events triggered by postMessage,
+                // this is how different windows in a browser
+                // (such as a popup or iFrame) can communicate.
+                // See: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
+                window.addEventListener("message", function (event) {
+                    // Check that the event was sent from the YouTube IFrame.
+                    if (event.source === iframeWindow) {
+                    var data = JSON.parse(event.data);
+
+                    // The "infoDelivery" event is used by YT to transmit any
+                    // kind of information change in the player,
+                    // such as the current time or a playback quality change.
+                    if (data.event === "infoDelivery" && data.info && data.info.currentTime) {
+                        // currentTime is emitted very frequently (milliseconds),
+                        // but we only care about whole second changes.
+                        var time = Math.floor(data.info.currentTime);
+
+                        if (time !== lastTimeUpdate) {
+                        lastTimeUpdate = time;
+
+                        // It's now up to you to format the time.
+                        document.getElementById("time").innerHTML = time;
+                        }
+                    }
+                    }
+                });
+            }
+
+            function onYouTubeIframeAPIReady() {
+                var player = new YT.Player("tweezplayer", {
+                    height: "405",
+                    width: "720",
+                    videoId: "25GWjze0WlU"
+                });
+
+                // This is the source "window" that will emit the events.
+                var iframeWindow = player.getIframe().contentWindow;
+
+                // So we can compare against new updates.
+                var lastTimeUpdate = 0;
+
+                // Listen to events triggered by postMessage,
+                // this is how different windows in a browser
+                // (such as a popup or iFrame) can communicate.
+                // See: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
+                window.addEventListener("message", function (event) {
+                    // Check that the event was sent from the YouTube IFrame.
+                    if (event.source === iframeWindow) {
+                    var data = JSON.parse(event.data);
+
+                    // The "infoDelivery" event is used by YT to transmit any
+                    // kind of information change in the player,
+                    // such as the current time or a playback quality change.
+                    if (data.event === "infoDelivery" && data.info && data.info.currentTime) {
+                        // currentTime is emitted very frequently (milliseconds),
+                        // but we only care about whole second changes.
+                        var time = Math.floor(data.info.currentTime);
+
+                        if (time !== lastTimeUpdate) {
+                        lastTimeUpdate = time;
+
+                        // It's now up to you to format the time.
+                        document.getElementById("time").innerHTML = time;
+                        }
+                    }
+                    }
+                });
+            }
+
+            function onYouTubeIframeAPIReady() {
+                var player = new YT.Player("tweezplayer", {
+                    height: "405",
+                    width: "720",
+                    videoId: "25GWjze0WlU"
                 });
 
                 // This is the source "window" that will emit the events.
@@ -183,8 +270,8 @@
                 <div class="songlist">
                     <h2>Songlist</h2>
                     <div class="slist">
-                        <button class="songbutt" onclick="DescOff(); DescOn(); TimeOff();">Chaldust Torture 7/10/1999</button>
-                        <button class="songbutt">Tweezer 2/28/2003</button>
+                        <button class="songbutt" onclick="DescOff(); CamdenOn();">Chaldust Torture 7/10/1999</button>
+                        <button class="songbutt" onclick="DescOff(); TweezOn();">Tweezer 2/28/2003</button>
                         <button class="songbutt">Kill Devil Falls 7/23/2023</button>
                     </div>
                 </div>
@@ -195,8 +282,8 @@
                     <div id="startwindow">
                         <img id="hotdog" src="images/Phishdog.png" alt="Phish riding a giant hot dog">
                     </div>
-                    <div id="camdenplayer">
-                    </div>
+                    <div id="camdenplayer"></div>
+                    <div id="tweezplayer"></div>
                 </div>
                 <div class="jamdesc">
                     <h2>Description</h2>
@@ -208,6 +295,9 @@
                     </div>
                     <div id="camdendesc2">
                         <p>Here is where the jam begins</p>
+                    </div>
+                    <div id="tweezdesc1">
+                        <p>Here's a dope ass Tweezer</p>
                     </div>
                 </div>
             </section>
