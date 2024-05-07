@@ -21,7 +21,7 @@
             #jamwindow {width: 40%;}
             .jamdesc {width: 50%;}
             .jamdesc h2 {text-align: center; font-size: 40px;}
-            #camdendesc1, #camdenplayer, #tweezplayer, #tweezdesc1 {display: none;}
+            #camdenplayer, #tweezplayer, #camdendesc1, #camdendesc2, #camdendesc3, #camdendesc4, #tweezdesc1 {display: none;}
 
 
             .slist {
@@ -44,6 +44,17 @@
                 font-size: 16px;
                 margin: 4px 2px;
                 cursor: pointer;
+            }
+
+            #camdendesc1 {
+                animation-name: fade-out;
+                animation-duration: 2s;
+                animation-timing-function: linear;
+                animation-delay: 0s;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: forwards;
+                animation-play-state: paused;
             }
 
             #camdendesc2 {
@@ -72,6 +83,17 @@
                     opacity:0;
                 }
             }
+            
+
+            @keyframes fade-out {
+                    
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
+                }
+	        }
 
         </style>
         <script>
@@ -140,8 +162,11 @@
 
             // when the time changes, this will be called.
             function onProgress(currentTime) {
-                if(currentTime > 20 && currentTime < 22) {
-                    document.getElementById('camdendesc1').style.display = 'none';
+                if(currentTime > 0) {
+                    document.getElementById('camdesc1').style.animationPlayState = 'running';
+                }
+                if(currentTime > 179 && currentTime < 182) {
+                    document.getElementById('camdendesc2').style.display = 'block';
                 }
             }
 
@@ -209,6 +234,12 @@
                     </div>
                     <div id="camdendesc2">
                         <p>Here is where the jam begins</p>
+                    </div>
+                    <div id="camdendesc3">
+                        <p>Mike hits these notes, suggesting a change in key</p>
+                    </div>
+                    <div id="camdendesc4">
+                        <p></p>
                     </div>
                     <div id="tweezdesc1">
                         <p>Here's a dope ass Tweezer</p>
