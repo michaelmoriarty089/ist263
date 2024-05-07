@@ -22,7 +22,6 @@
             .jamwindow {width: 40%;}
             .jamdesc {width: 50%;}
             .jamdesc h2 {text-align: center; font-size: 40px;}
-            .cam
             #camden, #tweezer, #kdf {max-width: 100%;}
 
         </style>
@@ -51,7 +50,9 @@
                         var data = JSON.parse(event.data);
                         if (data.event === "infoDelivery" && data.info && data.info.currentTime) {
                             var time = Math.floor(data.info.currentTime);
-                            if (time === 285) 
+                            if (time === 285) {
+                                document.getElementById('camdesc2').style.animationPlayState = "running"
+                            }
                         }
                     }
                 }
@@ -110,9 +111,7 @@
                 </div>
                 <div class="jamdesc">
                     <h2>Description</h2>
-                    <div id="camdendesc1">
-                        <p>Here's the start of the Camden Chalkdust</p>
-                    </div>
+                    
                     <div id="camdendesc2">
                         <p>Here is where the jam begins</p>
                     </div>
