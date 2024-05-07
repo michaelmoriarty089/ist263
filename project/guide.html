@@ -50,7 +50,7 @@
                         var data = JSON.parse(event.data);
                         if (data.event === "infoDelivery" && data.info && data.info.currentTime) {
                             var time = Math.floor(data.info.currentTime);
-                            if (time === 285) {
+                            if (time === 30) {
                                 document.getElementById('camdesc2').style.animationPlayState = "running"
                             }
                         }
