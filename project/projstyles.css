@@ -6,12 +6,12 @@ body {
   color: white;
 }
 
-h1, h2, h3 {
+h1, h2, {
   font-family: "Chicle", serif;
   color: #ffffff; 
 }
 
-p {
+h3, p {
   font-family: "Josefin Sans", sans-serif;
   color: #ffffff;
 }
@@ -54,8 +54,9 @@ nav {
   cursor: pointer;
 }
 
-.ocelot, .treypic, .mikepic, .pagepic, .fishpic, .ck5pic {
+.ocelot, .biopic {
   margin-top: 20px;
+  max-width: 100%;
   animation-name: shake-center;
   animation-duration: 1.8s;
   animation-timing-function: linear;
@@ -67,6 +68,7 @@ nav {
 }
 
 .ocelot:hover {animation-play-state: running;}
+.biopic:hover {animation-play-state: running;}
 .treypic:hover {animation-play-state: running;}
 .mikepic:hover {animation-play-state: running;}
 .pagepic:hover {animation-play-state: running;}
@@ -74,7 +76,7 @@ nav {
 .ck5pic:hover {animation-play-state: running;}
 
 
-.titlecard, .subtitlecard, .webtitlecard, .barber, .treypic, .mikepic, .pagepic, .fishpic, .ck5pic, .histvid, .ocelot {max-width: 100%;}
+.titlecard, .subtitlecard, .webtitlecard, .barber {max-width: 100%;}
 #camden, #tweezer, #kdf, #hotdog, #jamcard, #histvid1, #histvid2, #histvid3, #histvid4, #histvid5, #histvid6, #histvid7, #camdenplayer, #tweezplayer, #kdfplayer {max-width: 100%;}
 
 @keyframes shake-center {
