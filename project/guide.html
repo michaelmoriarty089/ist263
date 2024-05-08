@@ -23,7 +23,7 @@
             .jamdesc {width: 50%;}
             .jamdesc h2 {text-align: center; font-size: 60px; margin-top: 10px;}
             .jamdesc p {font-size: 20px; text-align: center; margin: auto;}
-            #camdenplayer, #tweezplayer, #kdfplayer, #simpleplayer, #ginplayer, #scentsplayer, #camdendesc1, #camdendesc2, #camdendesc3, #camdendesc4, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc1, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #tweezdesc9, #tweezdesc10, #tweezdesc11, #kdfdesc1, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8, #kdfdesc9, #simpledesc1, #simpledesc2, #simpledesc3, #simpledesc4, #simpledesc5, #simpledesc6, #simpledesc7, #simpledesc8, #gindesc1, #gindesc2, #gindesc3, #gindesc4, #gindesc5, #gindesc6, #gindesc7, #gindesc8, #scentsdesc1, #scentsdesc2, #scentsdesc3, #scentsdesc4, #scentsdesc5, #scentsdesc6, #scentsdesc7, #scentsdesc8 {display: none;}
+            #camdenplayer, #tweezplayer, #kdfplayer, #simpleplayer, #ginplayer, #scentsplayer, #camdendesc1, #camdendesc2, #camdendesc3, #camdendesc4, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc1, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #tweezdesc9, #tweezdesc10, #tweezdesc11, #kdfdesc1, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8, #kdfdesc9, #simpledesc1, #simpledesc2, #simpledesc3, #simpledesc4, #simpledesc5, #simpledesc6, #simpledesc7, #simpledesc8, #gindesc1, #gindesc2, #gindesc3, #gindesc4, #gindesc5, #gindesc6, #gindesc7, #gindesc8, #scentsdesc1, #scentsdesc2, #scentsdesc3, #scentsdesc4, #scentsdesc5, #scentsdesc6, #scentsdesc7, #scentsdesc8, #scentsdesc9, #scentsdesc10, #scentsdesc11 {display: none;}
             #camdendesc7 p {font-family: 'Chicle'; font-size: 60px; margin-top: 10px;}
             #tweezdesc8, #kdfdesc7 {text-align: center;}
             
@@ -63,7 +63,7 @@
                 animation-play-state: paused;
             }
 
-            #camdendesc2, #camdendesc3, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc9, #tweezdesc10, #tweezdesc11, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8, #kdfdesc9, #simpledesc2, #simpledesc3, #simpledesc4, #simpledesc5, #simpledesc6, #simpledesc7, #simpledesc8, #gindesc2, #gindesc3, #gindesc4, #gindesc5, #gindesc6, #gindesc7, #gindesc8, #scentsdesc2, #scentsdesc3, #scentsdesc4, #scentsdesc5, #scentsdesc6, #scentsdesc7, #scentsdesc8  {
+            #camdendesc2, #camdendesc3, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc9, #tweezdesc10, #tweezdesc11, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8, #kdfdesc9, #simpledesc2, #simpledesc3, #simpledesc4, #simpledesc5, #simpledesc6, #simpledesc7, #simpledesc8, #gindesc2, #gindesc3, #gindesc4, #gindesc5, #gindesc6, #gindesc7, #gindesc8, #scentsdesc2, #scentsdesc3, #scentsdesc4, #scentsdesc5, #scentsdesc6, #scentsdesc7, #scentsdesc8, #scentsdesc9, #scentsdesc10, #scentsdesc11 {
                 animation-name: fade-in-out;
                 animation-duration: 10s;
                 animation-timing-function: linear;
@@ -171,6 +171,9 @@
                 document.getElementById('scentsdesc6').style.display = 'none';
                 document.getElementById('scentsdesc7').style.display = 'none';
                 document.getElementById('scentsdesc8').style.display = 'none';
+                document.getElementById('scentsdesc9').style.display = 'none';
+                document.getElementById('scentsdesc10').style.display = 'none';
+                document.getElementById('scentsdesc11').style.display = 'none';
 
             }
 
@@ -703,7 +706,25 @@
                 }
                 if(currentTime > 774) {
                     document.getElementById('scentsdesc8').style.display = 'none';
-                }   
+                }
+                if(currentTime > 528 && currentTime < 529) {
+                    document.getElementById('scentsdesc9').style.display = 'block';
+                }
+                if(currentTime > 538) {
+                    document.getElementById('scentsdesc9').style.display = 'none';
+                }
+                if(currentTime > 612 && currentTime < 613) {
+                    document.getElementById('scentsdesc10').style.display = 'block';
+                }
+                if(currentTime > 622) {
+                    document.getElementById('scentsdesc10').style.display = 'none';
+                }
+                if(currentTime > 764 && currentTime < 765) {
+                    document.getElementById('scentsdesc11').style.display = 'block';
+                }
+                if(currentTime > 774) {
+                    document.getElementById('scentsdesc11').style.display = 'none';
+                }
             }
 
         </script>
@@ -922,28 +943,40 @@
                         <p>Fish moves back to the ride cymbol, opening the beat back up and giving Trey and Page room to expand and explore the space further. The band keeps this up till the end, when they bring back the Gin melody to cap it all off.</p>
                     </div>
                     <div id="scentsdesc1">
-                        <p>Here's a dope ass SaSS</p>
+                        <p>Date: December 6, 2019</p>
+                        <p>Venue: North Charleston Coliseum, North Charleston, SC</p>
+                        <p>I consider this Scents and Subtle Sounds to be the best jam I ever got to see in person. Complete with the rarely seen Scents Intro, this version takes its jam all over the place, switching back and forth between moods before finally settling on a monster ending.</p>
+                        <p>Notable moments: 4:59, 6:05, 8:00, 9:30, 10:49, 12:38, 13:55, 15:06, 16:46, 17:57</p>
                     </div>
                     <div id="scentsdesc2">
-                        <p>Note 2</p>
+                        <p>The jam starts out in the same soft, tender emotionality as the chorus they just left, laying down a light cloud for the audience to lay on.</p>
                     </div>
                     <div id="scentsdesc3">
-                        <p>Note 3</p>
+                        <p>Like a firey sword, Trey belts out this line signalling the others to modulate to a new minor focused mode, which they take up immdeiately. Shortly after this Trey teases a line from Axilla (a song the played a earlier in the set).</p>
                     </div>
                     <div id="scentsdesc4">
-                        <p>Note 4</p>
+                        <p>Mike strikes up a major mode line, which the others joing in on right away again (this will be a common theme throughout this jam. Their synchronicity in this jam is off the charts). Page starts a melody line that Trey picks up, creating a sort of call and response between him and Page, occasionally landing on the same melody simultaniously.</p>
                     </div>
                     <div id="scentsdesc5">
-                        <p>Here's a dope ass Tweezer</p>
+                        <p>Fish does his signature hits on his crash cymbol, signalling to the others to change it up. Trey immediately starts up another minor mode phrase, which Mike and Page join in on immediately.</p>
                     </div>
                     <div id="scentsdesc6">
-                        <p>Note 2</p>
+                        <p>Page plays some ascending chords and the band goes back to playing a major mode, however there's some tension here. They masterfully hold on to this tension while it builds up and then bursts out.</p>
                     </div>
                     <div id="scentsdesc7">
-                        <p>Note 3</p>
+                        <p>Very quickly after the peak, the band explores some more free-flowing, almost ambient playing, figuring out if they are going to keep going or if they should wind it all down.</p>
                     </div>
                     <div id="scentsdesc8">
-                        <p>Note 4</p>
+                        <p>Fish switches to a ride cymbol but keeps the driving beat going. He's not done yet. The rest of the band keeps the ambient sounds going, with Trey adding in another Axilla tease.</p>
+                    </div>
+                    <div id="scentsdesc9">
+                        <p>The ambient build up comes to a head. Simultaniously, Trey fires off on a phrase, Mike moves down to the low end and links up with Fish on a deep pocket groove, and Page moves over to the clav to really fill out the sound.</p>
+                    </div>
+                    <div id="scentsdesc10">
+                        <p>Who doesn't love a start/stop jam?</p>
+                    </div>
+                    <div id="scentsdesc11">
+                        <p>Fish switches to a ride cymbol but keeps the driving beat going. He's not done yet. The rest of the band keeps the ambient sounds going, with Trey adding in another Axilla tease.</p>
                     </div>
                 </div>
             </section>
