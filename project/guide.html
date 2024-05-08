@@ -71,6 +71,17 @@
                 animation-play-state: running;
             }
 
+            {
+                animation-name: fade-in-out;
+                animation-duration: 15s;
+                animation-timing-function: linear;
+                animation-delay: 0s;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: none;
+                animation-play-state: running;
+            }
+
             @keyframes fade-in-out {
                 0% {
                     opacity: 0;
@@ -185,7 +196,7 @@
                 if(currentTime > 318 && currentTime < 319) {
                     document.getElementById('camdendesc4').style.display = 'block';
                 }
-                if(currentTime > 328) {
+                if(currentTime > 333) {
                     document.getElementById('camdendesc4').style.display = 'none';
                 }
                 if(currentTime > 390 && currentTime < 391) {
