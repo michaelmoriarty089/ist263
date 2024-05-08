@@ -208,29 +208,14 @@
                 document.getElementById('scentsplayer').style.display = 'block';
             }
 
-            function stopCamVideo() {
-                cplayer.stopVideo();
+            var stopAllYouTubeVideos = () => { 
+                var iframes = document.querySelectorAll('iframe');
+                Array.prototype.forEach.call(iframes, iframe => { 
+                    iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', 
+                        func: 'stopVideo' }), '*');
+                });
             }
-
-            function stopTweezVideo() {
-                tplayer.stopVideo();
-            }
-            
-            function stopKDFVideo() {
-                kplayer.stopVideo();
-            }
-
-            function stopSimpleVideo() {
-                splayer.stopVideo();
-            }
-
-            function stopGinVideo() {
-                gplayer.stopVideo();
-            }
-
-            function stopScentsVideo() {
-                scplayer.stopVideo();
-            }
+                stopAllYouTubeVideos()
 
 
             var tag = document.createElement("script");
@@ -712,12 +697,12 @@
                 <div class="songlist">
                     <h2>Songlist</h2>
                     <div class="slist">
-                        <button class="songbutt" onclick="DescOff(); VidOff(); CamdenOn(); CamVidReady(); stopTweezVideo(); stopKDFVideo(); stopSimpleVideo(); stopGinVideo(); stopScentsVideo();">Chaldust Torture 7/10/1999</button>
-                        <button class="songbutt" onclick="DescOff(); VidOff(); TweezOn(); TweezVidReady(); stopCamVideo(); stopKDFVideo(); stopSimpleVideo(); stopGinVideo(); stopScentsVideo();">Tweezer 2/28/2003</button>
-                        <button class="songbutt" onclick="DescOff(); VidOff(); KDFOn(); KDFVidReady(); stopCamVideo(); stopTweezVideo(); stopSimpleVideo(); stopGinVideo(); stopScentsVideo();">Kill Devil Falls 7/23/2023</button>
-                        <button class="songbutt" onclick="DescOff(); VidOff(); SimpleOn(); SimpleVidReady(); stopCamVideo(); stopTweezVideo(); stopKDFVideo(); stopGinVideo(); stopScentsVideo();">Simple 12/6/1996</button>
-                        <button class="songbutt" onclick="DescOff(); VidOff(); GinOn(); GinVidReady(); stopCamVideo(); stopTweezVideo(); stopKDFVideo(); stopSimpleVideo(); stopScentsVideo();">Bathtub Gin 7/28/1998</button>
-                        <button class="songbutt" onclick="DescOff(); VidOff(); ScentsOn(); ScentsVidReady(); stopCamVideo(); stopTweezVideo(); stopKDFVideo(); stopSimpleVideo(); stopGinVideo();">Scents and Subtle Sounds 12/6/2019</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); stopAllYouTubeVideos(); CamdenOn(); CamVidReady();">Chaldust Torture 7/10/1999</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); stopAllYouTubeVideos(); TweezOn(); TweezVidReady();"">Tweezer 2/28/2003</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); stopAllYouTubeVideos(); KDFOn(); KDFVidReady();">Kill Devil Falls 7/23/2023</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); stopAllYouTubeVideos(); SimpleOn(); SimpleVidReady();">Simple 12/6/1996</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); stopAllYouTubeVideos(); GinOn(); GinVidReady();">Bathtub Gin 7/28/1998</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); stopAllYouTubeVideos(); ScentsOn(); ScentsVidReady();">Scents and Subtle Sounds 12/6/2019</button>
                     </div>
                 </div>
             </section>
