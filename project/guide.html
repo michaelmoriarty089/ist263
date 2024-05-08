@@ -21,7 +21,7 @@
             #jamwindow {width: 40%;}
             .jamdesc {width: 50%;}
             .jamdesc h2 {text-align: center; font-size: 40px;}
-            #camdenplayer, #tweezplayer, #camdendesc1, #camdendesc2, #camdendesc3, #camdendesc4, #tweezdesc1 {display: none;}
+            #camdenplayer, #tweezplayer, #camdendesc1, #camdendesc2, #camdendesc3, #camdendesc4, #camdendesc5, #camdendesc6, #camdendesc7, #tweezdesc1 {display: none;}
 
 
             .slist {
@@ -57,8 +57,7 @@
                 animation-play-state: paused;
             }
 
-            #camdendesc2 {
-                display: none;
+            #camdendesc2, #camdendesc3, #camdendesc4, #camdendesc5, #camdendesc6, #camdendesc7 {
                 animation-name: fade-in-out;
                 animation-duration: 10s;
                 animation-timing-function: linear;
@@ -105,6 +104,12 @@
                 document.getElementById('startdesc').style.display = "none";
                 document.getElementById('camdendesc1').style.display = "none";
                 document.getElementById('camdendesc2').style.display = 'none';
+                document.getElementById('camdendesc3').style.display = 'none';
+                document.getElementById('camdendesc4').style.display = 'none';
+                document.getElementById('camdendesc5').style.display = 'none';
+                document.getElementById('camdendesc6').style.display = 'none';
+                document.getElementById('camdendesc7').style.display = 'none';
+                
 
             }
 
@@ -120,19 +125,12 @@
 
             }
 
-            function CamdenOn2() {
-                document.getElementById('camdendesc2').style.display = 'block'
-                setTimeout(DescOff, 10000)
-            }
-
             function TweezOn() {
                 document.getElementById('tweezdesc1').style.display = 'block';
                 document.getElementById('tweezplayer').style.display = 'block';
 
             }
 
-
-            // Load the IFrame Player API code asynchronously.
             var tag = document.createElement("script");
             tag.src = "https://www.youtube.com/iframe_api";
             var firstScriptTag = document.getElementsByTagName("script")[0];
@@ -152,7 +150,6 @@
                 });
                 }
 
-            // when the player is ready, start checking the current time every 100 ms.
             function onPlayerReady() {
                 function updateTime() {
                     var oldTime = videotime;
@@ -166,7 +163,6 @@
                 timeupdater = setInterval(updateTime, 100);
             }
 
-            // when the time changes, this will be called.
             function onProgress(currentTime) {
                 if(currentTime > 0) {
                     document.getElementById('camdendesc1').style.animationPlayState = 'running';
@@ -177,6 +173,38 @@
                 if(currentTime > 190) {
                     document.getElementById('camdendesc2').style.display = 'none';
                 }
+                if(currentTime > 260 && currentTime < 261) {
+                    document.getElementById('camdendesc3').style.display = 'none';
+                }
+                if(currentTime > 270) {
+                    document.getElementById('camdendesc3').style.display = 'none';
+                }
+                if(currentTime > 318 && currentTime < 319) {
+                    document.getElementById('camdendesc4').style.display = 'none';
+                }
+                if(currentTime > 328) {
+                    document.getElementById('camdendesc4').style.display = 'none';
+                }
+                if(currentTime > 390 && currentTime < 391) {
+                    document.getElementById('camdendesc5').style.display = 'none';
+                }
+                if(currentTime > 400) {
+                    document.getElementById('camdendesc5').style.display = 'none';
+                }
+                if(currentTime > 528 && currentTime < 529) {
+                    document.getElementById('camdendesc6').style.display = 'none';
+                }
+                if(currentTime > 538) {
+                    document.getElementById('camdendesc6').style.display = 'none';
+                }
+                if(currentTime > 612 && currentTime < 613) {
+                    document.getElementById('camdendesc4').style.display = 'none';
+                }
+                if(currentTime > 622) {
+                    document.getElementById('camdendesc4').style.display = 'none';
+                }
+
+                
             }
 
         </script>
@@ -242,13 +270,22 @@
                         <p>When asked what their favorite jam is, most of the band members cite this performance.</p>
                     </div>
                     <div id="camdendesc2">
-                        <p>Here is where the jam begins</p>
+                        <p>Here is where the jam begins.</p>
                     </div>
                     <div id="camdendesc3">
-                        <p>Mike hits these notes, suggesting a change in key</p>
+                        <p>Mike has been hinting at an idea, hanging every other note for a little while while also suggesting a new melodic direction.</p>
                     </div>
                     <div id="camdendesc4">
-                        <p></p>
+                        <p>Trey and Mike link up where Mike was suggesting. Trey alternates between two high notes, Page starts lightly adding some high keys, Mike moves his pulse down to an earthquake-like pulse, and Fish opens up on splashier ride cymbols while adding in more ghost notes. Everyone is leaving a lot of empty space while also not stepping on each others toes. For the jam of a song that is normally a chaotic flurry of notes, this is a wonderful example of the beauty of negative space.</p>
+                    </div>
+                    <div id="camdendesc5">
+                        <p>Mike hits a dissonant note belonging to the key of the original jam. Trey and Page follow right not along after into the original Chalkdust jam.</p>
+                    </div>
+                    <div id="camdendesc6">
+                        <p>Trey and Mike link up again, this time launching in to a high-power, major key, bliss jam. Mike and Fish quick driving pulse while Page lays down smooth baby grand harmonies under Trey's screeching melody.</p>
+                    </div>
+                    <div id="camdendesc7">
+                        <p>BLAST OFF!!!</p>
                     </div>
                     <div id="tweezdesc1">
                         <p>Here's a dope ass Tweezer</p>
