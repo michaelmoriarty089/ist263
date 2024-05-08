@@ -23,7 +23,7 @@
             .jamdesc {width: 50%;}
             .jamdesc h2 {text-align: center; font-size: 60px; margin-top: 10px;}
             .jamdesc p {font-size: 20px; text-align: center; margin: auto;}
-            #camdenplayer, #tweezplayer, #kdfplayer, #simpleplayer, #ginplayer, #scentsplayer, #camdendesc1, #camdendesc2, #camdendesc3, #camdendesc4, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc1, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #kdfdesc1, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8, #simpledesc1, #simpledesc2, #simpledesc3, #simpledesc4, #simpledesc5, #simpledesc6, #simpledesc7, #simpledesc8, #gindesc1, #gindesc2, #gindesc3, #gindesc4, #gindesc5, #gindesc6, #gindesc7, #gindesc8, #scentsdesc1, #scentsdesc2, #scentsdesc3, #scentsdesc4, #scentsdesc5, #scentsdesc6, #scentsdesc7, #scentsdesc8 {display: none;}
+            #camdenplayer, #tweezplayer, #kdfplayer, #simpleplayer, #ginplayer, #scentsplayer, #camdendesc1, #camdendesc2, #camdendesc3, #camdendesc4, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc1, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #tweezdesc9, #tweezdesc10, #tweezdesc11, #kdfdesc1, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8, #simpledesc1, #simpledesc2, #simpledesc3, #simpledesc4, #simpledesc5, #simpledesc6, #simpledesc7, #simpledesc8, #gindesc1, #gindesc2, #gindesc3, #gindesc4, #gindesc5, #gindesc6, #gindesc7, #gindesc8, #scentsdesc1, #scentsdesc2, #scentsdesc3, #scentsdesc4, #scentsdesc5, #scentsdesc6, #scentsdesc7, #scentsdesc8 {display: none;}
             #camdendesc7 p {font-family: 'Chicle'; font-size: 60px; margin-top: 10px;}
             #camdendesc1 p {margin:auto; font-size: 16px;}
             
@@ -62,7 +62,7 @@
                 animation-play-state: paused;
             }
 
-            #camdendesc2, #camdendesc3, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8, #simpledesc2, #simpledesc3, #simpledesc4, #simpledesc5, #simpledesc6, #simpledesc7, #simpledesc8, #gindesc2, #gindesc3, #gindesc4, #gindesc5, #gindesc6, #gindesc7, #gindesc8, #scentsdesc2, #scentsdesc3, #scentsdesc4, #scentsdesc5, #scentsdesc6, #scentsdesc7, #scentsdesc8  {
+            #camdendesc2, #camdendesc3, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #tweezdesc9, #tweezdesc10, #tweezdesc11, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8, #simpledesc2, #simpledesc3, #simpledesc4, #simpledesc5, #simpledesc6, #simpledesc7, #simpledesc8, #gindesc2, #gindesc3, #gindesc4, #gindesc5, #gindesc6, #gindesc7, #gindesc8, #scentsdesc2, #scentsdesc3, #scentsdesc4, #scentsdesc5, #scentsdesc6, #scentsdesc7, #scentsdesc8  {
                 animation-name: fade-in-out;
                 animation-duration: 10s;
                 animation-timing-function: linear;
@@ -134,6 +134,9 @@
                 document.getElementById('tweezdesc6').style.display = 'none';
                 document.getElementById('tweezdesc7').style.display = 'none';
                 document.getElementById('tweezdesc8').style.display = 'none';
+                document.getElementById('tweezdesc9').style.display = 'none';
+                document.getElementById('tweezdesc10').style.display = 'none';
+                document.getElementById('tweezdesc11').style.display = 'none';
                 document.getElementById('kdfdesc1').style.display = "none";
                 document.getElementById('kdfdesc2').style.display = 'none';
                 document.getElementById('kdfdesc3').style.display = 'none';
@@ -351,16 +354,16 @@
                 if(currentTime > 442) {
                     document.getElementById('tweezdesc4').style.display = 'none';
                 }
-                if(currentTime > 390 && currentTime < 391) {
+                if(currentTime > 752 && currentTime < 753) {
                     document.getElementById('tweezdesc5').style.display = 'block';
                 }
-                if(currentTime > 400) {
+                if(currentTime > 762) {
                     document.getElementById('tweezdesc5').style.display = 'none';
                 }
-                if(currentTime > 528 && currentTime < 529) {
+                if(currentTime > 838 && currentTime < 839) {
                     document.getElementById('tweezdesc6').style.display = 'block';
                 }
-                if(currentTime > 538) {
+                if(currentTime > 848) {
                     document.getElementById('tweezdesc6').style.display = 'none';
                 }
                 if(currentTime > 612 && currentTime < 613) {
@@ -369,12 +372,30 @@
                 if(currentTime > 622) {
                     document.getElementById('tweezdesc7').style.display = 'none';
                 }
-                if(currentTime > 764 && currentTime < 765) {
+                if(currentTime > 901 && currentTime < 902) {
                     document.getElementById('tweezdesc8').style.display = 'block';
                 }
-                if(currentTime > 774) {
+                if(currentTime > 911) {
                     document.getElementById('tweezdesc8').style.display = 'none';
-                }   
+                }
+                if(currentTime > 1006 && currentTime < 1007) {
+                    document.getElementById('tweezdesc9').style.display = 'block';
+                }
+                if(currentTime > 1016) {
+                    document.getElementById('tweezdesc9').style.display = 'none';
+                }
+                if(currentTime > 1143 && currentTime < 1142) {
+                    document.getElementById('tweezdesc10').style.display = 'block';
+                }
+                if(currentTime > 1153) {
+                    document.getElementById('tweezdesc10').style.display = 'none';
+                }
+                if(currentTime > 1430 && currentTime < 1431) {
+                    document.getElementById('tweezdesc11').style.display = 'block';
+                }
+                if(currentTime > 1440) {
+                    document.getElementById('tweezdesc11').style.display = 'none';
+                }      
             }
 
             function KDFVidReady() {
@@ -774,7 +795,7 @@
                     </div>
                     <div id="tweezdesc1">
                         <p>Here's a dope ass Tweezer</p>
-                        <p>Notable moments: 5:02, 6:28, 7:12</p>
+                        <p>Notable moments: 5:02, 6:28, 7:12, 10:43, 12:32, 13:58, 16:46, 19:03</p>
                     </div>
                     <div id="tweezdesc2">
                         <p>Trey launches us into the jam with a swirly looped and timeshifted lick, indicating the start of a very intense jam.</p>
@@ -783,19 +804,28 @@
                         <p>Fish opens up the beat a little while also giving it a little more oomph. Trey follows suit by laying hard into the blues lines. Then Fish starts improvising a new beat on a ride cymbol.</p>
                     </div>
                     <div id="tweezdesc4">
-                        <p>Everyone starts to cool it down a litte, getting ready to start exploring for a new direction</p>
+                        <p>Everyone starts to cool it down a litte, getting ready to start exploring for a new direction...</p>
                     </div>
                     <div id="tweezdesc5">
-                        <p>Here's a dope ass Tweezer</p>
+                        <p>Trey strikes a chord with heavy delay and wah effects, signalling to the rest of the band that its time to go in a new direction. Fish confirms by giving 3 even hits on his crash cymbol (Fish's usual signal to the rest of the band to wrap the current idea up).</p>
                     </div>
                     <div id="tweezdesc6">
-                        <p>Note 2</p>
+                        <p>The jam takes its first major turn. Trey holds a note while Page moves from a Dorian mode (bluesier, more minor sounding) to a major mode, changing the mood entirely. Mike and Trey follow suit not long over, playing complimentary melodies over each other on top of Page's chords.</p>
                     </div>
                     <div id="tweezdesc7">
-                        <p>Note 3</p>
+                        <p>After patiently waiting for each other to get in sync with the new direction, all four members increase their intensity, push hard towards a stratospheric peak.</p>
                     </div>
                     <div id="tweezdesc8">
-                        <p>Note 4</p>
+                        <img id="sunrise" src="images/glorious.png" alt="Sunrise">
+                    </div>
+                    <div id="tweezdesc9">
+                        <p>After an incredibly emotional peak, Fish eases up on the intensity and the rest of the members follow suit and lower their volume, giving each other and the audience a chance to breath.</p>
+                    </div>
+                    <div id="tweezdesc10">
+                        <p>Trey and Fish lock in rhythmically, relaunching the inensity, this time in a more blues rock fashion.</p>
+                    </div>
+                    <div id="tweezdesc11">
+                        <p>After patiently waiting for each other to get in sync with the new direction, all four members increase their intensity, push hard towards a stratospheric peak.</p>
                     </div>
                     <div id="kdfdesc1">
                         <p>Here's a dope ass Kill Devil Falls</p>
