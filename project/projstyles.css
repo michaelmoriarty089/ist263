@@ -135,6 +135,10 @@ footer a:visited {
   color: #ffffff;
 }
 
+footer a:hover {
+  background-color: #28f828;
+}
+
 .footbutts {
   float: right;
 }
