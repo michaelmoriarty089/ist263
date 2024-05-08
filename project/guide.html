@@ -21,7 +21,7 @@
             #jamwindow {width: 40%; margin-left: 40px;}
             .jamdesc {width: 50%;}
             .jamdesc h2 {text-align: center; font-size: 60px; margin-top: 10px;}
-            #camdenplayer, #tweezplayer, #kdfplayer, #simpleplayer, #ginplayer, #camdendesc1, #camdendesc2, #camdendesc3, #camdendesc4, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc1, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #kdfdesc1, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8, #simpledesc1, #simpledesc2, #simpledesc3, #simpledesc4, #simpledesc5, #simpledesc6, #simpledesc7, #simpledesc8, #gindesc1, #gindesc2, #gindesc3, #gindesc4, #gindesc5, #gindesc6, #gindesc7, #gindesc8 {display: none;}
+            #camdenplayer, #tweezplayer, #kdfplayer, #simpleplayer, #ginplayer, #scentsplayer, #camdendesc1, #camdendesc2, #camdendesc3, #camdendesc4, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc1, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #kdfdesc1, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8, #simpledesc1, #simpledesc2, #simpledesc3, #simpledesc4, #simpledesc5, #simpledesc6, #simpledesc7, #simpledesc8, #gindesc1, #gindesc2, #gindesc3, #gindesc4, #gindesc5, #gindesc6, #gindesc7, #gindesc8, #scentsdesc1, #scentsdesc2, #scentsdesc3, #scentsdesc4, #scentsdesc5, #scentsdesc6, #scentsdesc7, #scentsdesc8 {display: none;}
             .jamdesc p {font-size: 20px; text-align: center; margin: auto;}
             #camdendesc7 p {font-family: 'Chicle'; font-size: 60px; margin-top: 10px;}
             #camdendesc1 p {margin:auto; font-size: 16px;}
@@ -50,7 +50,7 @@
                 cursor: pointer;
             }
 
-            #camdendesc1, #tweezdesc1, #kdfdesc1, #simpledesc1, #gindesc1 {
+            #camdendesc1, #tweezdesc1, #kdfdesc1, #simpledesc1, #gindesc1, #scentsdesc1 {
                 animation-name: fade-out;
                 animation-duration: 2s;
                 animation-timing-function: linear;
@@ -61,7 +61,7 @@
                 animation-play-state: paused;
             }
 
-            #camdendesc2, #camdendesc3, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8, #simpledesc2, #simpledesc3, #simpledesc4, #simpledesc5, #simpledesc6, #simpledesc7, #simpledesc8, #gindesc2, #gindesc3, #gindesc4, #gindesc5, #gindesc6, #gindesc7, #gindesc8 {
+            #camdendesc2, #camdendesc3, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8, #simpledesc2, #simpledesc3, #simpledesc4, #simpledesc5, #simpledesc6, #simpledesc7, #simpledesc8, #gindesc2, #gindesc3, #gindesc4, #gindesc5, #gindesc6, #gindesc7, #gindesc8, #scentsdesc2, #scentsdesc3, #scentsdesc4, #scentsdesc5, #scentsdesc6, #scentsdesc7, #scentsdesc8  {
                 animation-name: fade-in-out;
                 animation-duration: 10s;
                 animation-timing-function: linear;
@@ -157,6 +157,14 @@
                 document.getElementById('gindesc6').style.display = 'none';
                 document.getElementById('gindesc7').style.display = 'none';
                 document.getElementById('gindesc8').style.display = 'none';
+                document.getElementById('scentsdesc1').style.display = "none";
+                document.getElementById('scentsdesc2').style.display = 'none';
+                document.getElementById('scentsdesc3').style.display = 'none';
+                document.getElementById('scentsdesc4').style.display = 'none';
+                document.getElementById('scentsdesc5').style.display = 'none';
+                document.getElementById('scentsdesc6').style.display = 'none';
+                document.getElementById('scentsdesc7').style.display = 'none';
+                document.getElementById('scentsdesc8').style.display = 'none';
 
             }
 
@@ -167,6 +175,7 @@
                 document.getElementById('kdfplayer').style.display = "none";
                 document.getElementById('simpleplayer').style.display = "none";
                 document.getElementById('ginplayer').style.display = "none";
+                document.getElementById('scentsplayer').style.display = "none";
             }
 
             function CamdenOn() {
@@ -194,6 +203,11 @@
                 document.getElementById('ginplayer').style.display = 'block';
             }
 
+            function ScentsOn() {
+                document.getElementById('scentsdesc1').style.display = 'block';
+                document.getElementById('scentsplayer').style.display = 'block';
+            }
+
             function stopCamVideo() {
                 cplayer.stopVideo();
             }
@@ -212,6 +226,10 @@
 
             function stopGinVideo() {
                 gplayer.stopVideo();
+            }
+
+            function stopScentsVideo() {
+                scplayer.stopVideo();
             }
 
 
@@ -583,6 +601,78 @@
                 }   
             }
 
+            function ScentsVidReady() {
+                scplayer = new YT.Player('scentsplayer', {
+                    width: '720',
+                    height: '405',
+                    videoId: "5MGWHZC0xHU",
+                    events: {
+                    'onReady': onScentsPlayerReady
+                    }
+                });
+            }
+
+            function onScentsPlayerReady() {
+                function updateTime() {
+                    var oldTime = videotime;
+                    if(scplayer && scplayer.getCurrentTime) {
+                        videotime = scplayer.getCurrentTime();
+                    }
+                    if(videotime !== oldTime) {
+                        onScentsProgress(videotime);
+                    }
+                }
+                timeupdater = setInterval(updateTime, 100);
+            }
+
+            function onScentsProgress(currentTime) {
+                if(currentTime > 0) {
+                    document.getElementById('scentsdesc1').style.animationPlayState = 'running';
+                }
+                if(currentTime > 180 && currentTime < 181) {
+                    document.getElementById('scentsdesc2').style.display = 'block';
+                }
+                if(currentTime > 190) {
+                    document.getElementById('scentsdesc2').style.display = 'none';
+                }
+                if(currentTime > 260 && currentTime < 261) {
+                    document.getElementById('scentsdesc3').style.display = 'block';
+                }
+                if(currentTime > 270) {
+                    document.getElementById('scentsdesc3').style.display = 'none';
+                }
+                if(currentTime > 318 && currentTime < 319) {
+                    document.getElementById('scentsdesc4').style.display = 'block';
+                }
+                if(currentTime > 333) {
+                    document.getElementById('scentsdesc4').style.display = 'none';
+                }
+                if(currentTime > 390 && currentTime < 391) {
+                    document.getElementById('scentsdesc5').style.display = 'block';
+                }
+                if(currentTime > 400) {
+                    document.getElementById('scentsdesc5').style.display = 'none';
+                }
+                if(currentTime > 528 && currentTime < 529) {
+                    document.getElementById('scentsdesc6').style.display = 'block';
+                }
+                if(currentTime > 538) {
+                    document.getElementById('scentsdesc6').style.display = 'none';
+                }
+                if(currentTime > 612 && currentTime < 613) {
+                    document.getElementById('scentsdesc7').style.display = 'block';
+                }
+                if(currentTime > 622) {
+                    document.getElementById('scentsdesc7').style.display = 'none';
+                }
+                if(currentTime > 764 && currentTime < 765) {
+                    document.getElementById('scentsdesc8').style.display = 'block';
+                }
+                if(currentTime > 774) {
+                    document.getElementById('scentsdesc8').style.display = 'none';
+                }   
+            }
+
         </script>
     </head>
     <body>
@@ -622,11 +712,12 @@
                 <div class="songlist">
                     <h2>Songlist</h2>
                     <div class="slist">
-                        <button class="songbutt" onclick="DescOff(); VidOff(); CamdenOn(); CamVidReady(); stopTweezVideo(); stopKDFVideo(); stopSimpleVideo(); stopGinVideo();">Chaldust Torture 7/10/1999</button>
-                        <button class="songbutt" onclick="DescOff(); VidOff(); TweezOn(); TweezVidReady(); stopCamVideo(); stopKDFVideo(); stopSimpleVideo(); stopGinVideo();">Tweezer 2/28/2003</button>
-                        <button class="songbutt" onclick="DescOff(); VidOff(); KDFOn(); KDFVidReady(); stopCamVideo(); stopTweezVideo(); stopSimpleVideo(); stopGinVideo();">Kill Devil Falls 7/23/2023</button>
-                        <button class="songbutt" onclick="DescOff(); VidOff(); SimpleOn(); SimpleVidReady(); stopCamVideo(); stopTweezVideo(); stopKDFVideo(); stopGinVideo();">Simple 12/6/1996</button>
-                        <button class="songbutt" onclick="DescOff(); VidOff(); GinOn(); GinVidReady(); stopCamVideo(); stopTweezVideo(); stopKDFVideo(); stopSimpleVideo();">Bathtub Gin 7/28/1998</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); CamdenOn(); CamVidReady(); stopTweezVideo(); stopKDFVideo(); stopSimpleVideo(); stopGinVideo(); stopScentsVideo();">Chaldust Torture 7/10/1999</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); TweezOn(); TweezVidReady(); stopCamVideo(); stopKDFVideo(); stopSimpleVideo(); stopGinVideo(); stopScentsVideo();">Tweezer 2/28/2003</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); KDFOn(); KDFVidReady(); stopCamVideo(); stopTweezVideo(); stopSimpleVideo(); stopGinVideo(); stopScentsVideo();">Kill Devil Falls 7/23/2023</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); SimpleOn(); SimpleVidReady(); stopCamVideo(); stopTweezVideo(); stopKDFVideo(); stopGinVideo(); stopScentsVideo();">Simple 12/6/1996</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); GinOn(); GinVidReady(); stopCamVideo(); stopTweezVideo(); stopKDFVideo(); stopSimpleVideo(); stopScentsVideo();">Bathtub Gin 7/28/1998</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); ScentsOn(); ScnetsVidReady(); stopCamVideo(); stopTweezVideo(); stopKDFVideo(); stopSimpleVideo(); stopGinVideo();">Scents and Subtle Sounds 12/6/2019</button>
                     </div>
                 </div>
             </section>
@@ -641,6 +732,7 @@
                     <div id="kdfplayer"></div>
                     <div id="simpleplayer"></div>
                     <div id="ginplayer"></div>
+                    <div id="scentsplayer"></div>
                 </div>
                 <div class="jamdesc">
                     <h2>Description</h2>
@@ -768,6 +860,30 @@
                         <p>Note 3</p>
                     </div>
                     <div id="gindesc8">
+                        <p>Note 4</p>
+                    </div>
+                    <div id="scentsdesc1">
+                        <p>Here's a dope ass SaSS</p>
+                    </div>
+                    <div id="scentsdesc2">
+                        <p>Note 2</p>
+                    </div>
+                    <div id="scentsdesc3">
+                        <p>Note 3</p>
+                    </div>
+                    <div id="scentsdesc4">
+                        <p>Note 4</p>
+                    </div>
+                    <div id="scentsdesc5">
+                        <p>Here's a dope ass Tweezer</p>
+                    </div>
+                    <div id="scentsdesc6">
+                        <p>Note 2</p>
+                    </div>
+                    <div id="scentsdesc7">
+                        <p>Note 3</p>
+                    </div>
+                    <div id="scentsdesc8">
                         <p>Note 4</p>
                     </div>
                 </div>
