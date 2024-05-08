@@ -21,7 +21,7 @@
             #jamwindow {width: 40%; margin-left: 40px;}
             .jamdesc {width: 50%;}
             .jamdesc h2 {text-align: center; font-size: 60px; margin-top: 10px;}
-            #camdenplayer, #tweezplayer, #camdendesc1, #camdendesc2, #camdendesc3, #camdendesc4, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc1 {display: none;}
+            #camdenplayer, #tweezplayer, #camdendesc1, #camdendesc2, #camdendesc3, #camdendesc4, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc1, #tweezdesc2, #tweezdesc3, #tweezdesc4 {display: none;}
             .jamdesc p {font-size: 20px; text-align: center;}
             #camdendesc7 p {font-family: 'Chicle'; font-size: 60px; margin-top: 10px;}
             #camdendesc1 p {margin:auto; font-size: 16px;}
@@ -50,7 +50,7 @@
                 cursor: pointer;
             }
 
-            #camdendesc1 {
+            #camdendesc1, #tweezdesc1 {
                 animation-name: fade-out;
                 animation-duration: 4s;
                 animation-timing-function: linear;
@@ -61,7 +61,7 @@
                 animation-play-state: paused;
             }
 
-            #camdendesc2, #camdendesc3, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8 {
+            #camdendesc2, #camdendesc3, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc2, #tweezdesc3, #tweezdesc4 {
                 animation-name: fade-in-out;
                 animation-duration: 10s;
                 animation-timing-function: linear;
@@ -162,12 +162,12 @@
                     height: '405',
                     videoId: "1xZMHQjRTSM",
                     events: {
-                    'onReady': onPlayerReady
+                    'onReady': onCamPlayerReady
                     }
                 });
-                }
+            }
 
-            function onPlayerReady() {
+            function onCamPlayerReady() {
                 function updateTime() {
                     var oldTime = videotime;
                     if(cplayer && cplayer.getCurrentTime) {
@@ -319,6 +319,15 @@
                     </div>
                     <div id="tweezdesc1">
                         <p>Here's a dope ass Tweezer</p>
+                    </div>
+                    <div id="tweezdesc2">
+                        <p>Note 2</p>
+                    </div>
+                    <div id="tweezdesc3">
+                        <p>Note 3</p>
+                    </div>
+                    <div id="tweezdesc4">
+                        <p>Note 4</p>
                     </div>
                 </div>
             </section>
