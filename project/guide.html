@@ -174,13 +174,13 @@
                         videotime = cplayer.getCurrentTime();
                     }
                     if(videotime !== oldTime) {
-                        onProgress(videotime);
+                        onCamProgress(videotime);
                     }
                 }
                 timeupdater = setInterval(updateTime, 100);
             }
 
-            function onProgress(currentTime) {
+            function onCamProgress(currentTime) {
                 if(currentTime > 0) {
                     document.getElementById('camdendesc1').style.animationPlayState = 'running';
                 }
