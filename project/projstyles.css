@@ -75,7 +75,7 @@ nav {
 
 
 .titlecard, .subtitlecard, .webtitlecard, .barber, .treypic, .mikepic, .pagepic, .fishpic, .ck5pic, .histvid, .ocelot {max-width: 100%;}
-#camden, #tweezer, #kdf, #hotdog, #jamcard, #histvid1, #histvid2, #histvid3, #histvid4, #histvid5, #histvid6, #histvid7 {max-width: 100%;}
+#camden, #tweezer, #kdf, #hotdog, #jamcard, #histvid1, #histvid2, #histvid3, #histvid4, #histvid5, #histvid6, #histvid7, #camdenplayer {max-width: 100%;}
 
 @keyframes shake-center {
 	0% {
