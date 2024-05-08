@@ -54,7 +54,7 @@
                 animation-name: fade-out;
                 animation-duration: 2s;
                 animation-timing-function: linear;
-                animation-delay: 15s;
+                animation-delay: 6s;
                 animation-iteration-count: 1;
                 animation-direction: normal;
                 animation-fill-mode: forwards;
@@ -254,6 +254,9 @@
                 if(currentTime > 0) {
                     document.getElementById('camdendesc1').style.animationPlayState = 'running';
                 }
+                if(currentTime > 10) {
+                    document.getElementById('camdendesc1').style.display = 'none';
+                }
                 if(currentTime > 180 && currentTime < 181) {
                     document.getElementById('camdendesc2').style.display = 'block';
                 }
@@ -325,6 +328,9 @@
             function onTweezProgress(currentTime) {
                 if(currentTime > 0) {
                     document.getElementById('tweezdesc1').style.animationPlayState = 'running';
+                }
+                if(currentTime > 10) {
+                    document.getElementById('tweezdesc1').style.display = 'none';
                 }
                 if(currentTime > 180 && currentTime < 181) {
                     document.getElementById('tweezdesc2').style.display = 'block';
@@ -398,6 +404,9 @@
                 if(currentTime > 0) {
                     document.getElementById('kdfdesc1').style.animationPlayState = 'running';
                 }
+                if(currentTime > 10) {
+                    document.getElementById('kdfdesc1').style.display = 'none';
+                }
                 if(currentTime > 180 && currentTime < 181) {
                     document.getElementById('kdfdesc2').style.display = 'block';
                 }
@@ -470,6 +479,9 @@
                 if(currentTime > 0) {
                     document.getElementById('simpledesc1').style.animationPlayState = 'running';
                 }
+                if(currentTime > 10) {
+                    document.getElementById('simpledesc1').style.display = 'none';
+                }
                 if(currentTime > 180 && currentTime < 181) {
                     document.getElementById('simpledesc2').style.display = 'block';
                 }
@@ -541,6 +553,9 @@
             function onGinProgress(currentTime) {
                 if(currentTime > 0) {
                     document.getElementById('gindesc1').style.animationPlayState = 'running';
+                }
+                if(currentTime > 10) {
+                    document.getElementById('gindesc1').style.display = 'none';
                 }
                 if(currentTime > 180 && currentTime < 181) {
                     document.getElementById('gindesc2').style.display = 'block';
