@@ -51,7 +51,7 @@
 
             #camdendesc1 {
                 animation-name: fade-out;
-                animation-duration: 2s;
+                animation-duration: 4s;
                 animation-timing-function: linear;
                 animation-delay: 0s;
                 animation-iteration-count: 1;
@@ -60,7 +60,7 @@
                 animation-play-state: paused;
             }
 
-            #camdendesc2, #camdendesc3, #camdendesc5, #camdendesc6, #camdendesc7 {
+            #camdendesc2, #camdendesc3, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8 {
                 animation-name: fade-in-out;
                 animation-duration: 10s;
                 animation-timing-function: linear;
@@ -131,6 +131,7 @@
                 document.getElementById('startwindow').style.display = "none"
                 document.getElementById('camdenplayer').style.display = "none"
                 document.getElementById('tweezplayer').style.display = "none"
+                document.getElementById('kdfplayer').style.display = "none"
             }
 
             function CamdenOn() {
@@ -138,6 +139,7 @@
                 document.getElementById('camdenplayer').style.display = 'block';
 
             }
+
 
             function TweezOn() {
                 document.getElementById('tweezdesc1').style.display = 'block';
@@ -217,6 +219,12 @@
                 if(currentTime > 622) {
                     document.getElementById('camdendesc7').style.display = 'none';
                 }
+                if(currentTime > 764 && currentTime < 765) {
+                    document.getElementById('camdendesc8').style.display = 'block';
+                }
+                if(currentTime > 774) {
+                    document.getElementById('camdendesc8').style.display = 'none';
+                }
 
                 
             }
@@ -274,6 +282,7 @@
                     </div>
                     <div id="camdenplayer"></div>
                     <div id="tweezplayer"></div>
+                    <div id="kdfplayer"></div>
                 </div>
                 <div class="jamdesc">
                     <h2>Description</h2>
@@ -281,7 +290,10 @@
                         <h2>Click on a show above to get started!</h2>
                     </div>
                     <div id="camdendesc1">
-                        <p>When asked what their favorite jam is, most of the band members cite this performance.</p>
+                        <p>Date: July 10, 1999</p><br>
+                        <p>Venue: E Centre, Camden, NJ</p><br>
+                        <p>When asked which of their past performances perfect exemplifies Phish and what they are about, most of the band members say its this one. True to 1999 fashion, Mike takes the spotlight here, directing the jam to weave in and out of a usual Chalkdust jam, and finishes with a soaring bliss jam</p><br>
+                        <p>Notable moments: 3:00, 4:20, 5:18, 6:30, 8:48, 10:12</p>
                     </div>
                     <div id="camdendesc2">
                         <p>Here is where the jam begins.</p>
@@ -300,6 +312,9 @@
                     </div>
                     <div id="camdendesc7">
                         <p>BLAST OFF!!!</p>
+                    </div>
+                    <div id="camdendesc8">
+                        <p>As the jam levels out and winds down, Mike and Trey start an interesting, spacy, funky groove. Fish joins in, leaving Page to wash everything out on the clav.</p>
                     </div>
                     <div id="tweezdesc1">
                         <p>Here's a dope ass Tweezer</p>
