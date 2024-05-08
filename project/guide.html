@@ -21,7 +21,7 @@
             #jamwindow {width: 40%; margin-left: 40px;}
             .jamdesc {width: 50%;}
             .jamdesc h2 {text-align: center; font-size: 60px; margin-top: 10px;}
-            #camdenplayer, #tweezplayer, #camdendesc1, #camdendesc2, #camdendesc3, #camdendesc4, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc1, #tweezdesc2, #tweezdesc3, #tweezdesc4 {display: none;}
+            #camdenplayer, #tweezplayer, #kdfplayer, #camdendesc1, #camdendesc2, #camdendesc3, #camdendesc4, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc1, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #kdfdesc1, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8 {display: none;}
             .jamdesc p {font-size: 20px; text-align: center; margin: auto;}
             #camdendesc7 p {font-family: 'Chicle'; font-size: 60px; margin-top: 10px;}
             #camdendesc1 p {margin:auto; font-size: 16px;}
@@ -50,7 +50,7 @@
                 cursor: pointer;
             }
 
-            #camdendesc1, #tweezdesc1 {
+            #camdendesc1, #tweezdesc1, #kdfdesc1 {
                 animation-name: fade-out;
                 animation-duration: 2s;
                 animation-timing-function: linear;
@@ -61,7 +61,7 @@
                 animation-play-state: paused;
             }
 
-            #camdendesc2, #camdendesc3, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc2, #tweezdesc3, #tweezdesc4 {
+            #camdendesc2, #camdendesc3, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8 {
                 animation-name: fade-in-out;
                 animation-duration: 10s;
                 animation-timing-function: linear;
@@ -124,8 +124,23 @@
                 document.getElementById('camdendesc5').style.display = 'none';
                 document.getElementById('camdendesc6').style.display = 'none';
                 document.getElementById('camdendesc7').style.display = 'none';
-                
-
+                document.getElementById('camdendesc8').style.display = 'none';
+                document.getElementById('tweezdesc1').style.display = "none";
+                document.getElementById('tweezdesc2').style.display = 'none';
+                document.getElementById('tweezdesc3').style.display = 'none';
+                document.getElementById('tweezdesc4').style.display = 'none';
+                document.getElementById('tweezdesc5').style.display = 'none';
+                document.getElementById('tweezdesc6').style.display = 'none';
+                document.getElementById('tweezdesc7').style.display = 'none';
+                document.getElementById('tweezdesc8').style.display = 'none';
+                document.getElementById('kdfdesc1').style.display = "none";
+                document.getElementById('kdfdesc2').style.display = 'none';
+                document.getElementById('kdfdesc3').style.display = 'none';
+                document.getElementById('kdfdesc4').style.display = 'none';
+                document.getElementById('kdfdesc5').style.display = 'none';
+                document.getElementById('kdfdesc6').style.display = 'none';
+                document.getElementById('kdfdesc7').style.display = 'none';
+                document.getElementById('kdfdesc8').style.display = 'none';
             }
 
             function VidOff() {
@@ -146,6 +161,11 @@
                 document.getElementById('tweezdesc1').style.display = 'block';
                 document.getElementById('tweezplayer').style.display = 'block';
 
+            }
+
+            function KDFOn() {
+                document.getElementById('kdfdesc1').style.display = 'block';
+                document.getElementById('kdfplayer').style.display = 'block';
             }
 
             function stopCamVideo() {
@@ -311,6 +331,78 @@
                 }   
             }
 
+            function KDFVidReady() {
+                kplayer = new YT.Player('kdfplayer', {
+                    width: '720',
+                    height: '405',
+                    videoId: "L-Fpdg8YspU",
+                    events: {
+                    'onReady': onKDFPlayerReady
+                    }
+                });
+            }
+
+            function onKDFPlayerReady() {
+                function updateTime() {
+                    var oldTime = videotime;
+                    if(kplayer && kplayer.getCurrentTime) {
+                        videotime = kplayer.getCurrentTime();
+                    }
+                    if(videotime !== oldTime) {
+                        onKDFProgress(videotime);
+                    }
+                }
+                timeupdater = setInterval(updateTime, 100);
+            }
+
+            function onKDFProgress(currentTime) {
+                if(currentTime > 0) {
+                    document.getElementById('kdfdesc1').style.animationPlayState = 'running';
+                }
+                if(currentTime > 180 && currentTime < 181) {
+                    document.getElementById('kdfdesc2').style.display = 'block';
+                }
+                if(currentTime > 190) {
+                    document.getElementById('kdfdesc2').style.display = 'none';
+                }
+                if(currentTime > 260 && currentTime < 261) {
+                    document.getElementById('kdfdesc3').style.display = 'block';
+                }
+                if(currentTime > 270) {
+                    document.getElementById('kdfdesc3').style.display = 'none';
+                }
+                if(currentTime > 318 && currentTime < 319) {
+                    document.getElementById('kdfdesc4').style.display = 'block';
+                }
+                if(currentTime > 333) {
+                    document.getElementById('kdfdesc4').style.display = 'none';
+                }
+                if(currentTime > 390 && currentTime < 391) {
+                    document.getElementById('kdfdesc5').style.display = 'block';
+                }
+                if(currentTime > 400) {
+                    document.getElementById('kdfdesc5').style.display = 'none';
+                }
+                if(currentTime > 528 && currentTime < 529) {
+                    document.getElementById('kdfdesc6').style.display = 'block';
+                }
+                if(currentTime > 538) {
+                    document.getElementById('kdfdesc6').style.display = 'none';
+                }
+                if(currentTime > 612 && currentTime < 613) {
+                    document.getElementById('kdfdesc7').style.display = 'block';
+                }
+                if(currentTime > 622) {
+                    document.getElementById('kdfdesc7').style.display = 'none';
+                }
+                if(currentTime > 764 && currentTime < 765) {
+                    document.getElementById('kdfdesc8').style.display = 'block';
+                }
+                if(currentTime > 774) {
+                    document.getElementById('kdfdesc8').style.display = 'none';
+                }   
+            }
+
         </script>
     </head>
     <body>
@@ -350,9 +442,9 @@
                 <div class="songlist">
                     <h2>Songlist</h2>
                     <div class="slist">
-                        <button class="songbutt" onclick="DescOff(); VidOff(); CamdenOn(); CamVidReady(); stopTweezVideo();">Chaldust Torture 7/10/1999</button>
-                        <button class="songbutt" onclick="DescOff(); VidOff(); TweezOn(); TweezVidReady(); stopCamVideo();">Tweezer 2/28/2003</button>
-                        <button class="songbutt">Kill Devil Falls 7/23/2023</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); CamdenOn(); CamVidReady(); stopTweezVideo(); stopKDFVideo();">Chaldust Torture 7/10/1999</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); TweezOn(); TweezVidReady(); stopCamVideo(); stopKDFVideo">Tweezer 2/28/2003</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); KDFOn(); KDFVidReady(); stopCamVideo(); stopKDFVideo();">Kill Devil Falls 7/23/2023</button>
                     </div>
                 </div>
             </section>
@@ -408,6 +500,42 @@
                         <p>Note 3</p>
                     </div>
                     <div id="tweezdesc4">
+                        <p>Note 4</p>
+                    </div>
+                    <div id="tweezdesc5">
+                        <p>Here's a dope ass Tweezer</p>
+                    </div>
+                    <div id="tweezdesc6">
+                        <p>Note 2</p>
+                    </div>
+                    <div id="tweezdesc7">
+                        <p>Note 3</p>
+                    </div>
+                    <div id="tweezdesc8">
+                        <p>Note 4</p>
+                    </div>
+                    <div id="kdfdesc1">
+                        <p>Here's a dope ass Tweezer</p>
+                    </div>
+                    <div id="kdfdesc2">
+                        <p>Note 2</p>
+                    </div>
+                    <div id="kdfdesc3">
+                        <p>Note 3</p>
+                    </div>
+                    <div id="kdfdesc4">
+                        <p>Note 4</p>
+                    </div>
+                    <div id="kdfdesc5">
+                        <p>Here's a dope ass Tweezer</p>
+                    </div>
+                    <div id="kdfdesc6">
+                        <p>Note 2</p>
+                    </div>
+                    <div id="kdfdesc7">
+                        <p>Note 3</p>
+                    </div>
+                    <div id="kdfdesc8">
                         <p>Note 4</p>
                     </div>
                 </div>
