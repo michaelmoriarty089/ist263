@@ -21,7 +21,7 @@
             #jamwindow {width: 40%; margin-left: 40px;}
             .jamdesc {width: 50%;}
             .jamdesc h2 {text-align: center; font-size: 60px; margin-top: 10px;}
-            #camdenplayer, #tweezplayer, #kdfplayer, #camdendesc1, #camdendesc2, #camdendesc3, #camdendesc4, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc1, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #kdfdesc1, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8 {display: none;}
+            #camdenplayer, #tweezplayer, #kdfplayer, #simpleplayer, #ginplayer, #rebaplayer, #camdendesc1, #camdendesc2, #camdendesc3, #camdendesc4, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc1, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #kdfdesc1, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8, #simpledesc1, #simpledesc2, #simpledesc3, #simpledesc4, #simpledesc5, #simpledesc6, #simpledesc7, #simpledesc8, #gindesc1, #gindesc2, #gindesc3, #gindesc4, #gindesc5, #gindesc6, #gindesc7, #gindesc8, #rebadesc1, #rebadesc2, #rebadesc3, #rebadesc4, #rebadesc5, #rebadesc6, #rebadesc7, #rebadesc8 {display: none;}
             .jamdesc p {font-size: 20px; text-align: center; margin: auto;}
             #camdendesc7 p {font-family: 'Chicle'; font-size: 60px; margin-top: 10px;}
             #camdendesc1 p {margin:auto; font-size: 16px;}
@@ -50,7 +50,7 @@
                 cursor: pointer;
             }
 
-            #camdendesc1, #tweezdesc1, #kdfdesc1 {
+            #camdendesc1, #tweezdesc1, #kdfdesc1, #simpledesc1, #gindesc1, #rebadesc1 {
                 animation-name: fade-out;
                 animation-duration: 2s;
                 animation-timing-function: linear;
@@ -61,7 +61,7 @@
                 animation-play-state: paused;
             }
 
-            #camdendesc2, #camdendesc3, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8 {
+            #camdendesc2, #camdendesc3, #camdendesc5, #camdendesc6, #camdendesc7, #camdendesc8, #tweezdesc2, #tweezdesc3, #tweezdesc4, #tweezdesc5, #tweezdesc6, #tweezdesc7, #tweezdesc8, #kdfdesc2, #kdfdesc3, #kdfdesc4, #kdfdesc5, #kdfdesc6, #kdfdesc7, #kdfdesc8, #simpledesc2, #simpledesc3, #simpledesc4, #simpledesc5, #simpledesc6, #simpledesc7, #simpledesc8, #gindesc2, #gindesc3, #gindesc4, #gindesc5, #gindesc6, #gindesc7, #gindesc8, #rebadesc2, #rebadesc3, #rebadesc4, #rebadesc5, #rebadesc6, #rebadesc7, #rebadesc8 {
                 animation-name: fade-in-out;
                 animation-duration: 10s;
                 animation-timing-function: linear;
@@ -141,13 +141,41 @@
                 document.getElementById('kdfdesc6').style.display = 'none';
                 document.getElementById('kdfdesc7').style.display = 'none';
                 document.getElementById('kdfdesc8').style.display = 'none';
+                document.getElementById('simpledesc1').style.display = "none";
+                document.getElementById('simpledesc2').style.display = 'none';
+                document.getElementById('simpledesc3').style.display = 'none';
+                document.getElementById('simpledesc4').style.display = 'none';
+                document.getElementById('simpledesc5').style.display = 'none';
+                document.getElementById('simpledesc6').style.display = 'none';
+                document.getElementById('simpledesc7').style.display = 'none';
+                document.getElementById('simpledesc8').style.display = 'none';
+                document.getElementById('gindesc1').style.display = "none";
+                document.getElementById('gindesc2').style.display = 'none';
+                document.getElementById('gindesc3').style.display = 'none';
+                document.getElementById('gindesc4').style.display = 'none';
+                document.getElementById('gindesc5').style.display = 'none';
+                document.getElementById('gindesc6').style.display = 'none';
+                document.getElementById('gindesc7').style.display = 'none';
+                document.getElementById('gindesc8').style.display = 'none';
+                document.getElementById('rebadesc1').style.display = "none";
+                document.getElementById('rebadesc2').style.display = 'none';
+                document.getElementById('rebadesc3').style.display = 'none';
+                document.getElementById('rebadesc4').style.display = 'none';
+                document.getElementById('rebadesc5').style.display = 'none';
+                document.getElementById('rebadesc6').style.display = 'none';
+                document.getElementById('rebadesc7').style.display = 'none';
+                document.getElementById('rebadesc8').style.display = 'none';
             }
 
             function VidOff() {
-                document.getElementById('startwindow').style.display = "none"
-                document.getElementById('camdenplayer').style.display = "none"
-                document.getElementById('tweezplayer').style.display = "none"
-                document.getElementById('kdfplayer').style.display = "none"
+                document.getElementById('startwindow').style.display = "none";
+                document.getElementById('camdenplayer').style.display = "none";
+                document.getElementById('tweezplayer').style.display = "none";
+                document.getElementById('kdfplayer').style.display = "none";
+                document.getElementById('simpleplayer').style.display = "none";
+                document.getElementById('ginplayer').style.display = "none";
+                document.getElementById('rebaplayer').style.display = "none";
+
             }
 
             function CamdenOn() {
@@ -168,6 +196,21 @@
                 document.getElementById('kdfplayer').style.display = 'block';
             }
 
+            function SimpleOn() {
+                document.getElementById('simpledesc1').style.display = 'block';
+                document.getElementById('simpleplayer').style.display = 'block';
+            }
+
+            function GinOn() {
+                document.getElementById('gindesc1').style.display = 'block';
+                document.getElementById('ginplayer').style.display = 'block';
+            }
+
+            function RebaOn() {
+                document.getElementById('rebadesc1').style.display = 'block';
+                document.getElementById('rebaplayer').style.display = 'block';
+            }
+
             function stopCamVideo() {
                 cplayer.stopVideo();
             }
@@ -175,8 +218,21 @@
             function stopTweezVideo() {
                 tplayer.stopVideo();
             }
+
             function stopKDFVideo() {
                 kplayer.stopVideo();
+            }
+
+            function stopSimpleVideo() {
+                splayer.stopVideo();
+            }
+
+            function stopGinVideo() {
+                gplayer.stopVideo();
+            }
+
+            function stopRebaVideo() {
+                rplayer.stopVideo();
             }
 
             var tag = document.createElement("script");
@@ -403,6 +459,222 @@
                 }   
             }
 
+            function SimpleVidReady() {
+                splayer = new YT.Player('simpleplayer', {
+                    width: '720',
+                    height: '405',
+                    videoId: "zdNm1-w5lF8",
+                    events: {
+                    'onReady': onSimplePlayerReady
+                    }
+                });
+            }
+
+            function onSimplePlayerReady() {
+                function updateTime() {
+                    var oldTime = videotime;
+                    if(splayer && splayer.getCurrentTime) {
+                        videotime = splayer.getCurrentTime();
+                    }
+                    if(videotime !== oldTime) {
+                        onSimpleProgress(videotime);
+                    }
+                }
+                timeupdater = setInterval(updateTime, 100);
+            }
+
+            function onSimpleProgress(currentTime) {
+                if(currentTime > 0) {
+                    document.getElementById('simpledesc1').style.animationPlayState = 'running';
+                }
+                if(currentTime > 180 && currentTime < 181) {
+                    document.getElementById('simpledesc2').style.display = 'block';
+                }
+                if(currentTime > 190) {
+                    document.getElementById('simpledesc2').style.display = 'none';
+                }
+                if(currentTime > 260 && currentTime < 261) {
+                    document.getElementById('simpledesc3').style.display = 'block';
+                }
+                if(currentTime > 270) {
+                    document.getElementById('simpledesc3').style.display = 'none';
+                }
+                if(currentTime > 318 && currentTime < 319) {
+                    document.getElementById('simpledesc4').style.display = 'block';
+                }
+                if(currentTime > 333) {
+                    document.getElementById('simpledesc4').style.display = 'none';
+                }
+                if(currentTime > 390 && currentTime < 391) {
+                    document.getElementById('simpledesc5').style.display = 'block';
+                }
+                if(currentTime > 400) {
+                    document.getElementById('simpledesc5').style.display = 'none';
+                }
+                if(currentTime > 528 && currentTime < 529) {
+                    document.getElementById('simpledesc6').style.display = 'block';
+                }
+                if(currentTime > 538) {
+                    document.getElementById('simpledesc6').style.display = 'none';
+                }
+                if(currentTime > 612 && currentTime < 613) {
+                    document.getElementById('simpledesc7').style.display = 'block';
+                }
+                if(currentTime > 622) {
+                    document.getElementById('simpledesc7').style.display = 'none';
+                }
+                if(currentTime > 764 && currentTime < 765) {
+                    document.getElementById('simpledesc8').style.display = 'block';
+                }
+                if(currentTime > 774) {
+                    document.getElementById('simpledesc8').style.display = 'none';
+                }   
+            }
+
+            function GinVidReady() {
+                gplayer = new YT.Player('ginplayer', {
+                    width: '720',
+                    height: '405',
+                    videoId: "5MGWHZC0xHU",
+                    events: {
+                    'onReady': onGinPlayerReady
+                    }
+                });
+            }
+
+            function onGinPlayerReady() {
+                function updateTime() {
+                    var oldTime = videotime;
+                    if(gplayer && gplayer.getCurrentTime) {
+                        videotime = gplayer.getCurrentTime();
+                    }
+                    if(videotime !== oldTime) {
+                        onGinProgress(videotime);
+                    }
+                }
+                timeupdater = setInterval(updateTime, 100);
+            }
+
+            function onGinProgress(currentTime) {
+                if(currentTime > 0) {
+                    document.getElementById('gindesc1').style.animationPlayState = 'running';
+                }
+                if(currentTime > 180 && currentTime < 181) {
+                    document.getElementById('gindesc2').style.display = 'block';
+                }
+                if(currentTime > 190) {
+                    document.getElementById('gindesc2').style.display = 'none';
+                }
+                if(currentTime > 260 && currentTime < 261) {
+                    document.getElementById('gindesc3').style.display = 'block';
+                }
+                if(currentTime > 270) {
+                    document.getElementById('gindesc3').style.display = 'none';
+                }
+                if(currentTime > 318 && currentTime < 319) {
+                    document.getElementById('gindesc4').style.display = 'block';
+                }
+                if(currentTime > 333) {
+                    document.getElementById('gindesc4').style.display = 'none';
+                }
+                if(currentTime > 390 && currentTime < 391) {
+                    document.getElementById('gindesc5').style.display = 'block';
+                }
+                if(currentTime > 400) {
+                    document.getElementById('gindesc5').style.display = 'none';
+                }
+                if(currentTime > 528 && currentTime < 529) {
+                    document.getElementById('gindesc6').style.display = 'block';
+                }
+                if(currentTime > 538) {
+                    document.getElementById('gindesc6').style.display = 'none';
+                }
+                if(currentTime > 612 && currentTime < 613) {
+                    document.getElementById('gindesc7').style.display = 'block';
+                }
+                if(currentTime > 622) {
+                    document.getElementById('gindesc7').style.display = 'none';
+                }
+                if(currentTime > 764 && currentTime < 765) {
+                    document.getElementById('gindesc8').style.display = 'block';
+                }
+                if(currentTime > 774) {
+                    document.getElementById('gindesc8').style.display = 'none';
+                }   
+            }
+
+            function RebaVidReady() {
+                rplayer = new YT.Player('rebaplayer', {
+                    width: '720',
+                    height: '405',
+                    videoId: "OZt20tW0E5U",
+                    events: {
+                    'onReady': onRebaPlayerReady
+                    }
+                });
+            }
+
+            function onRebaPlayerReady() {
+                function updateTime() {
+                    var oldTime = videotime;
+                    if(rplayer && rplayer.getCurrentTime) {
+                        videotime = rplayer.getCurrentTime();
+                    }
+                    if(videotime !== oldTime) {
+                        onRebaProgress(videotime);
+                    }
+                }
+                timeupdater = setInterval(updateTime, 100);
+            }
+
+            function onRebaProgress(currentTime) {
+                if(currentTime > 0) {
+                    document.getElementById('rebadesc1').style.animationPlayState = 'running';
+                }
+                if(currentTime > 180 && currentTime < 181) {
+                    document.getElementById('rebadesc2').style.display = 'block';
+                }
+                if(currentTime > 190) {
+                    document.getElementById('rebadesc2').style.display = 'none';
+                }
+                if(currentTime > 260 && currentTime < 261) {
+                    document.getElementById('rebadesc3').style.display = 'block';
+                }
+                if(currentTime > 270) {
+                    document.getElementById('rebadesc3').style.display = 'none';
+                }
+                if(currentTime > 318 && currentTime < 319) {
+                    document.getElementById('rebadesc4').style.display = 'block';
+                }
+                if(currentTime > 333) {
+                    document.getElementById('rebadesc4').style.display = 'none';
+                }
+                if(currentTime > 390 && currentTime < 391) {
+                    document.getElementById('rebadesc5').style.display = 'block';
+                }
+                if(currentTime > 400) {
+                    document.getElementById('rebadesc5').style.display = 'none';
+                }
+                if(currentTime > 528 && currentTime < 529) {
+                    document.getElementById('rebadesc6').style.display = 'block';
+                }
+                if(currentTime > 538) {
+                    document.getElementById('rebadesc6').style.display = 'none';
+                }
+                if(currentTime > 612 && currentTime < 613) {
+                    document.getElementById('rebadesc7').style.display = 'block';
+                }
+                if(currentTime > 622) {
+                    document.getElementById('rebadesc7').style.display = 'none';
+                }
+                if(currentTime > 764 && currentTime < 765) {
+                    document.getElementById('rebadesc8').style.display = 'block';
+                }
+                if(currentTime > 774) {
+                    document.getElementById('rebadesc8').style.display = 'none';
+                }   
+            }
+
         </script>
     </head>
     <body>
@@ -445,6 +717,9 @@
                         <button class="songbutt" onclick="DescOff(); VidOff(); CamdenOn(); CamVidReady(); stopTweezVideo(); stopKDFVideo();">Chaldust Torture 7/10/1999</button>
                         <button class="songbutt" onclick="DescOff(); VidOff(); TweezOn(); TweezVidReady(); stopCamVideo(); stopKDFVideo">Tweezer 2/28/2003</button>
                         <button class="songbutt" onclick="DescOff(); VidOff(); KDFOn(); KDFVidReady(); stopCamVideo(); stopTweezVideo();">Kill Devil Falls 7/23/2023</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); SimpleOn(); SimpleVidReady(); stopCamVideo(); stopTweezVideo(); stopKDFVideo();">Simple 12/6/1996</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); TweezOn(); TweezVidReady(); stopCamVideo(); stopKDFVideo">Tweezer 2/28/2003</button>
+                        <button class="songbutt" onclick="DescOff(); VidOff(); KDFOn(); KDFVidReady(); stopCamVideo(); stopTweezVideo();">Kill Devil Falls 7/23/2023</button>
                     </div>
                 </div>
             </section>
@@ -457,6 +732,7 @@
                     <div id="camdenplayer"></div>
                     <div id="tweezplayer"></div>
                     <div id="kdfplayer"></div>
+                    <div id="simpleplayer"></div>
                 </div>
                 <div class="jamdesc">
                     <h2>Description</h2>
@@ -536,6 +812,78 @@
                         <p>Note 3</p>
                     </div>
                     <div id="kdfdesc8">
+                        <p>Note 4</p>
+                    </div>
+                    <div id="simpledesc1">
+                        <p>Here's a dope ass Tweezer</p>
+                    </div>
+                    <div id="simpledesc2">
+                        <p>Note 2</p>
+                    </div>
+                    <div id="simpledesc3">
+                        <p>Note 3</p>
+                    </div>
+                    <div id="simpledesc4">
+                        <p>Note 4</p>
+                    </div>
+                    <div id="simpledesc5">
+                        <p>Here's a dope ass Tweezer</p>
+                    </div>
+                    <div id="simpledesc6">
+                        <p>Note 2</p>
+                    </div>
+                    <div id="simpledesc7">
+                        <p>Note 3</p>
+                    </div>
+                    <div id="simpledesc8">
+                        <p>Note 4</p>
+                    </div>
+                    <div id="gindesc1">
+                        <p>Here's a dope ass Tweezer</p>
+                    </div>
+                    <div id="gindesc2">
+                        <p>Note 2</p>
+                    </div>
+                    <div id="gindesc3">
+                        <p>Note 3</p>
+                    </div>
+                    <div id="gindesc4">
+                        <p>Note 4</p>
+                    </div>
+                    <div id="gindesc5">
+                        <p>Here's a dope ass Tweezer</p>
+                    </div>
+                    <div id="gindesc6">
+                        <p>Note 2</p>
+                    </div>
+                    <div id="gindesc7">
+                        <p>Note 3</p>
+                    </div>
+                    <div id="gindesc8">
+                        <p>Note 4</p>
+                    </div>
+                    <div id="rebadesc1">
+                        <p>Here's a dope ass Tweezer</p>
+                    </div>
+                    <div id="rebadesc2">
+                        <p>Note 2</p>
+                    </div>
+                    <div id="rebadesc3">
+                        <p>Note 3</p>
+                    </div>
+                    <div id="rebadesc4">
+                        <p>Note 4</p>
+                    </div>
+                    <div id="rebadesc5">
+                        <p>Here's a dope ass Tweezer</p>
+                    </div>
+                    <div id="rebadesc6">
+                        <p>Note 2</p>
+                    </div>
+                    <div id="rebadesc7">
+                        <p>Note 3</p>
+                    </div>
+                    <div id="rebadesc8">
                         <p>Note 4</p>
                     </div>
                 </div>
