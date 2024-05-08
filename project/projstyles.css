@@ -128,15 +128,11 @@ footer p {
 }
 
 footer a {
-  color: #be2a28;
+  color: #ffffff;
 }
 
 footer a:visited {
   color: #ffffff;
-}
-
-footer a:hover {
-  background-color: #28f828;
 }
 
 .footbutts {
