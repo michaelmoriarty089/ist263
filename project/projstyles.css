@@ -127,6 +127,14 @@ footer p {
   width: 42%;
 }
 
+footer a {
+  color: #be2a28;
+}
+
+footer a:visited {
+  color: #ffffff;
+}
+
 .footbutts {
   float: right;
 }
