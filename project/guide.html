@@ -228,6 +228,78 @@
                 }   
             }
 
+            function TweezVidReady() {
+                tplayer = new YT.Player('camdenplayer', {
+                    width: '720',
+                    height: '405',
+                    videoId: "1xZMHQjRTSM",
+                    events: {
+                    'onReady': onTweezPlayerReady
+                    }
+                });
+            }
+
+            function onTweezPlayerReady() {
+                function updateTime() {
+                    var oldTime = videotime;
+                    if(tplayer && tplayer.getCurrentTime) {
+                        videotime = tplayer.getCurrentTime();
+                    }
+                    if(videotime !== oldTime) {
+                        onTweezProgress(videotime);
+                    }
+                }
+                timeupdater = setInterval(updateTime, 100);
+            }
+
+            function onTweezProgress(currentTime) {
+                if(currentTime > 0) {
+                    document.getElementById('tweezdesc1').style.animationPlayState = 'running';
+                }
+                if(currentTime > 180 && currentTime < 181) {
+                    document.getElementById('tweezdesc2').style.display = 'block';
+                }
+                if(currentTime > 190) {
+                    document.getElementById('tweezdesc2').style.display = 'none';
+                }
+                if(currentTime > 260 && currentTime < 261) {
+                    document.getElementById('tweezdesc3').style.display = 'block';
+                }
+                if(currentTime > 270) {
+                    document.getElementById('tweezdesc3').style.display = 'none';
+                }
+                if(currentTime > 318 && currentTime < 319) {
+                    document.getElementById('tweezdesc4').style.display = 'block';
+                }
+                if(currentTime > 333) {
+                    document.getElementById('tweezdesc4').style.display = 'none';
+                }
+                if(currentTime > 390 && currentTime < 391) {
+                    document.getElementById('tweezdesc5').style.display = 'block';
+                }
+                if(currentTime > 400) {
+                    document.getElementById('tweezdesc5').style.display = 'none';
+                }
+                if(currentTime > 528 && currentTime < 529) {
+                    document.getElementById('tweezdesc6').style.display = 'block';
+                }
+                if(currentTime > 538) {
+                    document.getElementById('tweezdesc6').style.display = 'none';
+                }
+                if(currentTime > 612 && currentTime < 613) {
+                    document.getElementById('tweezdesc7').style.display = 'block';
+                }
+                if(currentTime > 622) {
+                    document.getElementById('tweezdesc7').style.display = 'none';
+                }
+                if(currentTime > 764 && currentTime < 765) {
+                    document.getElementById('tweezdesc8').style.display = 'block';
+                }
+                if(currentTime > 774) {
+                    document.getElementById('tweezdesc8').style.display = 'none';
+                }   
+            }
+
         </script>
     </head>
     <body>
@@ -256,7 +328,9 @@
         <main id="main">
 
             <section class="jamtitle">
-                <img id="jamcard" src="images/jam guide title.png" alt="Jam guide title card">
+                <div>
+                    <img id="jamcard" src="images/jam_guide_title.png" alt="Jam guide title card">
+                </div>
             </section>
 
             <section class="jamlist">
@@ -332,7 +406,7 @@
 
         </main>
         <footer>
-            <p>&copy;2024  This site voluntarily complies with the Phish fan web site policy at: <a href="https://www.phish.com/faq/web-guidelines&#8221" target="_blank">https://www.phish.com/faq/web-guidelines&#8221</a></p>
+            <p>&copy;2024  This site voluntarily complies with the Phish fan web site policy at: <a href="https://phish.com/faq/#web-guidelines"; target="_blank">https://phish.com/faq/#web-guidelines</a></p>
             <div class="footbutts">
                 <a href="index.html" class="navbutton">Home</a>
                 <a href="history.html" class="navbutton">Band History</a>
