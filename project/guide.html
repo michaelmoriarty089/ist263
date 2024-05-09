@@ -241,9 +241,15 @@
                     height: '405',
                     videoId: "1xZMHQjRTSM",
                     events: {
-                    'onStateChange': onCamPlayerReady
+                    'onStateChange': onPlayerStateChange
                     }
                 });
+            }
+
+            function onPlayerStateChange() {
+                if (event.data == YT.PlayerState.PLAYING) {
+                    onCamPlayerReady();
+                }
             }
 
             function onCamPlayerReady() {
