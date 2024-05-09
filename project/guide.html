@@ -241,22 +241,24 @@
                     height: '405',
                     videoId: "1xZMHQjRTSM",
                     events: {
-                    'onReady': onCamPlayerReady
+                    'onStateChange': onCamPlayerStateChange
                     }
                 });
             }
 
-            function onCamPlayerReady() {
-                function updateTime() {
-                    var oldTime = videotime;
-                    if(cplayer && cplayer.getCurrentTime) {
-                        videotime = cplayer.getCurrentTime();
+            function onCamPlayerStateChange(playerStatus) {
+                if(playerStatus == 1) {
+                    function updateTime() {
+                        var oldTime = videotime;
+                        if(cplayer && cplayer.getCurrentTime) {
+                            videotime = cplayer.getCurrentTime();
+                        }
+                        if(videotime !== oldTime) {
+                            onCamProgress(videotime);
+                        }
                     }
-                    if(videotime !== oldTime) {
-                        onCamProgress(videotime);
-                    }
+                    timeupdater = setInterval(updateTime, 100);
                 }
-                timeupdater = setInterval(updateTime, 100);
             }
 
             function onCamProgress(currentTime) {
