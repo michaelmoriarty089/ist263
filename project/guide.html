@@ -246,12 +246,7 @@
                 });
             }
 
-            function onCamPlayerStateChange() {
-                if(cplayer && cplayer.getPlayerState){
-                    playstate = cplayer.getPlayerStatus();
-                }
-                if(playstate == 1) {
-                    function updateTime() {
+            function updateTime() {
                         var oldTime = videotime;
                         if(cplayer && cplayer.getCurrentTime) {
                             videotime = cplayer.getCurrentTime();
@@ -260,6 +255,12 @@
                             onCamProgress(videotime);
                         }
                     }
+
+            function onCamPlayerStateChange() {
+                if(cplayer && cplayer.getPlayerState){
+                    playstate = cplayer.getPlayerStatus();
+                }
+                if(playstate == 1) {
                     timeupdater = setInterval(updateTime, 100);
                 }
                 if(playstate != 1) {
