@@ -242,12 +242,11 @@
                     videoId: "1xZMHQjRTSM",
                     events: {
                     'onReady': onCamPlayerReady
-                    'onStateChange': onCamPlayerStateChange
                     }
                 });
             }
 
-            function CamVidTimer() {
+            function onCamPlayerReady() {
                 function updateTime() {
                     var oldTime = videotime;
                     if(cplayer && cplayer.getCurrentTime) {
@@ -258,12 +257,6 @@
                     }
                 }
                 timeupdater = setInterval(updateTime, 100);
-            }
-
-            function onCamPlayerStateChange(event) {
-                if(event.data == 1) {CamVidTimer()}
-                if(event.data !== 1) {clearInterval(timeupdater)}
-
             }
 
             function onCamProgress(currentTime) {
